@@ -1,6 +1,6 @@
 const express = require('express');
 const cors = require('cors');
-const { CLIENT_ORIGIN } = require('./config');
+const { CLIENT_ORIGIN, PORT } = require('./config');
 
 const app = express();
 
@@ -221,3 +221,4 @@ const tarotDeck ={
 app.get('/api/tarotDeck', (req ,res) => {
   res.json(tarotDeck);
 });
+app.listen(PORT, () => {console.log(`server is running on port ${PORT}`)});
