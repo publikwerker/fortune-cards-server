@@ -8,6 +8,7 @@ const cors = require('cors');
 const { CLIENT_ORIGIN, PORT , DATABASE_URL } = require('./config');
 const {deck} = require('./tarotDeck.js');
 const { router: usersRouter } = require('./users');
+const { router: authRouter, localStrategy, jwtStrategy } = require('./auth');
 
 mongoose.Promise = global.Promise;
 
@@ -20,7 +21,23 @@ app.use(
   })
 );
 
-app.use('/api/users', usersRouter);
+passport.use(localStrategy);
+passport.use(jwtStrategy);
+
+app.use('/api/users/', usersRouter);
+app.use('/api/auth/', authRouter);
+
+const jwtAuth = passport.authenticate('jwt', {session: false});
+
+app.get('/api/protected', jwtAuth, (req, res) => {
+  return res.json({
+    data: 'rosebud'
+  });
+});
+
+app.use('*', (req, res) => {
+  return res.status(404).json({message: 'Not Found'});
+});
 
 app.get('/api/tarotDeck', (req ,res) => {
   console.log(deck);
