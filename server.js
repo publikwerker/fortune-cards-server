@@ -1,7 +1,7 @@
 const express = require('express');
 const cors = require('cors');
 const { CLIENT_ORIGIN, PORT } = require('./config');
-import deck from './tarotDeck.js';
+const {deck} = require('./tarotDeck.js');
 
 const app = express();
 
@@ -12,6 +12,7 @@ app.use(
 );
 
 app.get('/api/tarotDeck', (req ,res) => {
+  console.log(deck);
   res.json(deck);
 });
 
