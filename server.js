@@ -35,24 +35,17 @@ app.get('/api/protected', jwtAuth, (req, res) => {
   });
 });
 
-app.use('*', (req, res) => {
-  return res.status(404).json({message: 'Not Found'});
-});
 
 app.get('/api/tarotDeck', (req ,res) => {
   console.log(deck);
   res.json(deck);
 });
 
-//POST /api/users/ to request to register a new user
+app.use('*', (req, res) => {
+  return res.status(404).json({message: 'Not Found'});
+});
 
-//POST /api/auth/login to request a JWT
 
-//GET /api/protected
-
-//POST /api/auth/refresh
-
-// app.listen(PORT, () => {console.log(`server is running on port ${PORT}`)});
 
 let server;
 

@@ -115,6 +115,7 @@ router.post('/', jsonParser, (req, res) => {
   });
 });
 
+//bounces back list of users FOR DEV
 router.get('/', (req, res) => {
   return User.find()
     .then(users => res.json(users.map(user => user.serialize())))

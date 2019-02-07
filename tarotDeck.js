@@ -71,14 +71,14 @@ const deck= [
     This card refers to Cain/Abel, Eve/Lilith, idea/contradiction, particle/antiparticle, analysis/synthesis. Any idea suggests its opposite. With Atu XIV, VI composes the alchemical maxim: Solve et coagula. As with Atu I, the Juggler, we are to consider equilibrium, its fundamental importance, and its necessity. Crowley hints that this card is of transendental importance. “In its original form, it was the story of Creation.”
     Atu VI refers to Gemini and is ruled by Mercury. The corresponding Hebrew letter is Zayin, which means a Sword. Crowley calls the sword “an engine of division”, and it’s good to note he doesn’t call it a tool. The suit of swords refers to air and the intellectual world. The path of Zayin is from Binah (Understanding) to Tipareth (Beauty). Crowley states this path depicts inspiration.
     Their secret title is the Children of the Voice: the Oracles of the Mighty God.`,
-    img: 'https://static1.squarespace.com/static/590185441b10e3a0176bb2bf/t/599f4e967131a550b1edabed/1530126054227/?format=1000w',
+    img: 'https://static1.squarespace.com/static/590185441b10e3a0176bb2bf/5c5a0d17eef1a12d338ba784/5c5c5f1ef9619ad9e69184e2/1549557556684/6+The+Lovers.jpg?format=500w',
   }, 
   {
     id: 'VII',
     name: 'The Chariot',
     desc: `Atu VII is called The Chariot, and it is associated with the astrological sign of Cancer, the cardinal sign of Water. As The Hierophant brought down the Supernal Fire from Chokmah, The Chariot brings Supernal Water from The Great Sea, Binah (Understanding) to Geburah (Strength). This path is associated with the Hebrew letter Cheth, which means a Fence, and has the numerical value of eight.
     Its secret title is the Child of the Powers of the Waters: the Lord of the Triumph of Light.`,
-    img: 'https://static1.squarespace.com/static/590185441b10e3a0176bb2bf/t/599f4e967131a550b1edabed/1530126054227/?format=1000w',
+    img: 'https://static1.squarespace.com/static/590185441b10e3a0176bb2bf/5c5a0d17eef1a12d338ba784/5c5c5f62fa0d606d797db642/1549557636539/7+The+Chariot.jpg?format=500w',
   }, 
   {
     id: 'VIII',
@@ -88,7 +88,7 @@ const deck= [
     This card, representing the Hebrew letter Lamed, is the female complement to the Fool card. The letters Alef Lamed spell AL, and constitute the secret key to Liber AL, the Book of the Law. She represents the “complete formula of the Dyad”, Manifestation, which may always we cancelled out “by the equilibration of opposites”. She is Karma, and she hold the scales and the sword. She is a hieroglyph of “Love is the Law; Love under Will”. “Every form of energy must be directed, must be applied with integrity, to the full satisfaction of its destiny.”
     Lamed means Ox Goad and has the numerical value of 30. It is the path between Geburah, Strength, and Tipareth, Beauty.
     Its secret title is the Daughter of the Lords of Truth, the Ruler of the Balance.`,
-    img: 'https://static1.squarespace.com/static/590185441b10e3a0176bb2bf/t/599f4e967131a550b1edabed/1530126054227/?format=1000w',
+    img: 'https://static1.squarespace.com/static/590185441b10e3a0176bb2bf/5c5a0d17eef1a12d338ba784/5c5c5f8e1905f47e33a7e829/1549557656600/8+Adjustment.jpg?format=500w',
   }, 
   {
     id: 'IX',
@@ -97,7 +97,7 @@ const deck= [
     Yod is ruled by Virgo, the most fertile and receptive of the signs. This card represents Fertility in its highest sense. This card also represents the myth of Persephone.
     Yod is the path from Chesed (Mercy) to Tipareth (Beauty). On the Tree, it counter-balances Adjustment, Atu XIII. Yod means a Hand and has the numerical value of 10. It’s interesting to note that Virgo is ruled by and exalts Mercury.
     Its secret title is the Prophet of the Eternal, the Magus of the Voice of Power.`,
-    img: 'https://static1.squarespace.com/static/590185441b10e3a0176bb2bf/t/599f4e967131a550b1edabed/1530126054227/?format=1000w',
+    img: 'https://static1.squarespace.com/static/590185441b10e3a0176bb2bf/5c5a0d17eef1a12d338ba784/5c5c5fa2e79c70a85404339e/1549557675039/9+The+Hermit.jpg?format=500w',
   }, 
   {
     id: 'X',
@@ -105,7 +105,7 @@ const deck= [
     desc: `This card is attributed to Jupiter, which is known as “the Greater Fortune” in astrology. The path corresponds to the letter Kaph, which means the Palm of the hand, where fortunes are read. The letter Kaph has the numerical value of 20, but the final form has a value of 500. The path it represents connects Chesed, Mercy, to Netzach, Victory.
     The idea behind this card is that change is constant. The elements continually revolve. We are directed to consider the Wheel of Fortune. A wheel spins, rolls, and travels anywhere you want to go with relative ease, but we must attain the axle, which does this without moving.
     Its secret title is the Lord of the Forces of Life.`,
-    img: 'https://static1.squarespace.com/static/590185441b10e3a0176bb2bf/t/599f4e967131a550b1edabed/1530126054227/?format=1000w',
+    img: 'https://static1.squarespace.com/static/590185441b10e3a0176bb2bf/5c5a0d17eef1a12d338ba784/5c5c5fb4e5e5f02e133a3ff6/1549557695638/10+Fortune.jpg?format=500w',
   }, 
   {
     id: 'XI',
@@ -113,14 +113,14 @@ const deck= [
     desc: `Formerly named Strength, Crowley renamed this card because he considered the concept to be about more than just strength. The concept is also the joy of strength exercised, perhaps the being strong or the having of strength. The term Lust has added meaning for Thelemites. There is a quote in the Book of the Law admonishing us against the “lust of result” when manifesting our Will.
     The Lust card is attributed to the sign of Leo and the letter Teth, which means a Serpent and has the numerical value of 9. Crowley says this is the most powerful of the twelve Zodiacal cards. Leo is the Kerub of Fire and is ruled by the Sun. The path of Teth connects Chesed, Mercy, to Geburah, Strength. The path is balanced both vertically and horizontally on the tree.
     Its secret title is the Daughter of the Flaming Sword.`,
-    img: 'https://static1.squarespace.com/static/590185441b10e3a0176bb2bf/t/599f4e967131a550b1edabed/1530126054227/?format=1000w',
+    img: 'https://static1.squarespace.com/static/590185441b10e3a0176bb2bf/5c5a0d17eef1a12d338ba784/5c5c5fcc7817f77aa32d8c3b/1549557715712/11+Lust.jpg?format=500w',
   }, 
   {
     id: 'XII',
     name: 'The Hanged man',
     desc: `This card is represented by the letter Mem and the element of water. In particular, it represents the spiritual function of water in initiation to symbolize death and rebirth/baptism. The Hanged Man represents the descent of light into darkness in order to redeem it, but his is redemption without sacrifice, and specifically no self-sacrifice. This Hanged Man represents the God of the previous Aeon. “The whole idea of sacrifice is a misconception of nature.” Also, Crowley says, “Redemption is a bad word; it implies a debt. Fore every star possesses boundless wealth; the only proper was to deal with the ignorant is to bring them to the knowledge of their starry heritage. To do this, it is necessary to behave as must be done in order to get on good terms with animals and children: to treat them with absolute respect; even, in a certain sense, with worship.” Mem is the path between Geburah, Strength, and Hod, Splendor, and it has the numerical value of 40. Its final form has a value of 600.
     Its secret title is the Spirit of the Mighty Waters.`,
-    img: 'https://static1.squarespace.com/static/590185441b10e3a0176bb2bf/t/599f4e967131a550b1edabed/1530126054227/?format=1000w',
+    img: 'https://static1.squarespace.com/static/590185441b10e3a0176bb2bf/5c5a0d17eef1a12d338ba784/5c5c5fe14785d3fecc205577/1549557742364/12+The+Hanged+Man.jpg?format=500w',
   }, 
   {
     id: 'XIII',
@@ -128,7 +128,7 @@ const deck= [
     desc: `The Death card is probably the least understood and most feared by those of the previous Aeon. It’s unhelpful and unfortunate that they were taught that death is an Ending. This path is represented by the letter Nun, which means a Fish. The card represents the sign of Scorpio and the alchemical idea of putrefaction: “The strain of the environment has become intolerable, and the attacked element willingly subjects itself to change.” This card, along with Atu XI, Lust, and Atu XII, form a mini magickal narrative. There are three essential types of putrefaction, each represented by the fish, the serpent, and the eagle. This card is a more complete idea of death/resurrection that was corrupted by the Black Lodge of a secret male Creator/Destroyer God, Atu XV.
     Nun is the path which connects Tipareth (Beauty) to Netzach (Victory). It has the numerical value of 50, and its final version has a value of 700.
     Its secret title is the Child of the Great Transformers, the Lord of the Gate of Death.`,
-    img: 'https://static1.squarespace.com/static/590185441b10e3a0176bb2bf/t/599f4e967131a550b1edabed/1530126054227/?format=1000w',
+    img: 'https://static1.squarespace.com/static/590185441b10e3a0176bb2bf/5c5a0d17eef1a12d338ba784/5c5c5ff9085229ad86fdb78c/1549557766642/13+Death.jpg?format=500w',
   }, 
   {
     id: 'XIV',
@@ -136,7 +136,7 @@ const deck= [
     desc: `The Art card is attributed to Sagittarius, the archer. It represents the letter Samech, which means a Prop and has the numeric value of 60. The path descends from Tipareth (Beauty) the seat of our perfect selves, to Yesod (the Foundation). Connecting Beauty to Foundation, it represents the specific Alchemical process of putrefaction that produces a Rainbow.
     The Art card was known as Temperance under the old Gods. They are a double card, neither male nor female but a little of both. They complete the Lovers card and form a double-double symbol, as both cards are both male and female. The Egyptian God Horus is said to rule the Age of Aquarius. Horus was a double god, male and female, a schizophrenic hermaphrodite. This New Age was prophesized to herald a great mingling of the sexes. Choosing the name Art over Temperance illustrates one of the great philosophical differences between the Ages. The only sin is restriction.
     Its secret title is the Daughter of the Reconcilers, the Bringer-Forth of Life.`,
-    img: 'https://static1.squarespace.com/static/590185441b10e3a0176bb2bf/t/599f4e967131a550b1edabed/1530126054227/?format=1000w',
+    img: 'https://static1.squarespace.com/static/590185441b10e3a0176bb2bf/5c5a0d17eef1a12d338ba784/5c5c6011e4966b048bc9b40c/1549557800050/14+Art.jpg?format=500w',
   }, 
   {
     id: 'XV',
@@ -145,7 +145,7 @@ const deck= [
     This path connects Tipareth (Beauty) to Hod (Splendor). It’s interesting to note that the Devil and Death are symmetrically placed on the Tree. Crowley gives a hint that these two paths, together with Art, are the key “by which idea manifests as form”, and he also states the “formula for this card is the appreciation of all existing things”.
     Atu IX, Zero, and XV represent the sacred name of God I A O. As such, they form the “threefold explanation of the male creative energy”.
     Its secret title is the Lord of the Gates of Matter, the Child of the Forces of Time.`,
-    img: 'https://static1.squarespace.com/static/590185441b10e3a0176bb2bf/t/599f4e967131a550b1edabed/1530126054227/?format=1000w',
+    img: 'https://static1.squarespace.com/static/590185441b10e3a0176bb2bf/5c5a0d17eef1a12d338ba784/5c5c6033971a18566344730c/1549557828036/15+The+Devil.jpg?format=500w',
   }, 
   {
     id: 'XVI',
@@ -154,7 +154,7 @@ const deck= [
     In his discussion of the Art card, Atu XIV, Crowley names Hod and Netzach Thought and Bliss. It would be worthwhile to consider that the Mouth is the path that connects these two, and Art is the path that passes through it. 
     The Tower card is ruled also by Mars, so Crowley gives an alternate name: War. In the previous Aeon, this card was named the Blasted Tower. Its secret title is the Lord of the Hosts of the Mighty.
     All magickal symbols must be understood in a double sense, which includes the opposite, contradictory idea of its meaning. Again, there is the reminder that when a Thing is created, its opposite is also created. The destruction of both, or the Annihilation of both, is the return to the original Perfection.`,
-    img: 'https://static1.squarespace.com/static/590185441b10e3a0176bb2bf/t/599f4e967131a550b1edabed/1530126054227/?format=1000w',
+    img: 'https://static1.squarespace.com/static/590185441b10e3a0176bb2bf/5c5a0d17eef1a12d338ba784/5c5c605115fcc0cc392c1ac9/1549557860139/16+The+Tower.jpg?format=500w',
   }, 
   {
     id: 'XVII',
@@ -164,7 +164,7 @@ const deck= [
     The path of Heh connects Chokmah (Wisdom) to Tipareth (Beauty). Heh means a Window and has the numerical value of 5. Heh is a feminine letter and it is one of the Goddesses. Just as Atu 0, I, and IX are the Godforms, Atu II, III, and XVII describe three manifestations of feminine energy.
     Although Crowley states that this card, along with Trumps II and III, completes the Alchemical Triad of Mercury, Salt, and Sulfur, I’m going to assume that is also incorrect, and I’ll presume that the Star has assumed that role.
     Its secret title of this card is the Daughter of the Firmament; the Dweller between the Waters.`,
-    img: 'https://static1.squarespace.com/static/590185441b10e3a0176bb2bf/t/599f4e967131a550b1edabed/1530126054227/?format=1000w',
+    img: 'https://static1.squarespace.com/static/590185441b10e3a0176bb2bf/5c5a0d17eef1a12d338ba784/5c5c6072fa0d606d797dc3e6/1549557889343/17+The+Star.jpg?format=500w',
   }, 
   {
     id: 'XVIII',
@@ -173,7 +173,7 @@ const deck= [
     This card represents midnight (especially the long dark night of the soul), it connects Netzach (Victory) to Malkuth (the Kingdom) and the path is guarded by Tabu. It is considered the path of the waning moon, of witchcraft, and of abominable deeds. As it references midnight and the end of winter, another name for this card is the Gateway of Resurrection.
     “Whatever horrors may afflict the soul, whatever abominations may excite the loathing of the heart, whatever terrors may assail the mind, the answer is the same at every stage: 'How splendid is the Adventure!'”
     Its secret title is the Ruler of Flux & Reflux, the Child of the Sons of the Mighty.`,
-    img: 'https://static1.squarespace.com/static/590185441b10e3a0176bb2bf/t/599f4e967131a550b1edabed/1530126054227/?format=1000w',
+    img: 'https://static1.squarespace.com/static/590185441b10e3a0176bb2bf/5c5a0d17eef1a12d338ba784/5c5c608e53450aa0aa42b8b4/1549557904624/18+The+Moon.jpg?format=500w',
   }, 
   {
     id: 'XIX',
@@ -181,7 +181,7 @@ const deck= [
     desc: `The Sun card, according to Crowley, is one of the simplest concepts in the deck. It is the Lord of the New Aeon. “He is the Lord of Light, Life, Liberty and Love. This Aeon has for its purpose the complete emancipation of the human race.”
     The Sun is attributed to the letter Resh, which means the Head and has a numerical value of 200. It connects Hod (Splendor) to Yesod (Foundation).
     The secret title of this card is the Lord of the Fire of the World.`,
-    img: 'https://static1.squarespace.com/static/590185441b10e3a0176bb2bf/t/599f4e967131a550b1edabed/1530126054227/?format=1000w',
+    img: 'https://static1.squarespace.com/static/590185441b10e3a0176bb2bf/5c5a0d17eef1a12d338ba784/5c5c609eeef1a1953a66146f/1549557925170/19+The+Sun.jpg?format=500w',
   }, 
   {
     id: 'XX',
@@ -190,7 +190,7 @@ const deck= [
     “In this card it has been necessary to depart completely from the tradition of the cards, in order to carry on that tradition.” The old card was called The Last Judgment or The Angel. As the previous Aeon was ruled by Osiris, the Egyptian God who was slain and resurrected, the overarching theme of the Age of Pisces the fish has been one of resurrection and sacrifice. They awaited the destruction of the world by fire, which apparently took place in 1904, when the Fiery God Horus replaced the Airy God Osiris as Hierophant. “I am the Hawk-Headed Lord of Silence & of Strength; ... my left hand is empty, for I have crushed an Universe; & nought remains.”
     At this point it may be prudent to say a few things about Horus, our new Hierophant. Born of Nuit, the Goddess often portrayed as the starry night sky and who represents limitless possibities, and Hadit, a wingéd globe who represents the concept of consciousness as an individual, concentrated point of view of the greater Whole. Horus, the hawk-headed god was born, but they are a double god. Their extroverted side is Ra-hoor-khuit, and their passive or introverted form is Hoor-pa-kraat. Thus, this family forms an example of the Tetragrammaton, with Horus being both Son and Daughter.
     Its secret title is the Spirit of the Primal Fire.`,
-    img: 'https://static1.squarespace.com/static/590185441b10e3a0176bb2bf/t/599f4e967131a550b1edabed/1530126054227/?format=1000w',
+    img: 'https://static1.squarespace.com/static/590185441b10e3a0176bb2bf/5c5a0d17eef1a12d338ba784/5c5c60b1f9619ad9e6919bc8/1549557948846/20+The+Aeon.jpg?format=500w',
   }, 
   {
     id: 'XXI',
@@ -200,7 +200,7 @@ const deck= [
     The Universe is attributed to the letter Tau, which means a Cross. Tau has the numeric value of 400 and is attributed to both Saturn, who rules all of Time, and the Earth. 
     This Path forms a link from Malkuth (Kingdom), or the world as we know it, to Yesod (Foundation) and the Astral plane. Symbolically, this Path is the connection between the Moon and the Earth, between our conscious mind and our physical being, and between our internal world and our shared reality.
      The secret title of The Universe is The Great One of the Night of Time.`,
-    img: 'https://static1.squarespace.com/static/590185441b10e3a0176bb2bf/t/599f4e967131a550b1edabed/1530126054227/?format=1000w',
+    img: 'https://static1.squarespace.com/static/590185441b10e3a0176bb2bf/5c5a0d17eef1a12d338ba784/5c5c60c6c83025da56a62cfb/1549557972954/21+The+Universe.jpg?format=500w',
   },
 ] 
 module.exports={deck};
