@@ -203,4 +203,7 @@ const deck= [
     img: 'https://static1.squarespace.com/static/590185441b10e3a0176bb2bf/5c5a0d17eef1a12d338ba784/5c5c60c6c83025da56a62cfb/1549557972954/21+The+Universe.jpg?format=500w',
   },
 ] 
-module.exports={deck};
+
+const shuffle = require('shuffle-array');
+const shuffledDeck= shuffle(state.deck);
+module.exports={deck, shuffledDeck};
