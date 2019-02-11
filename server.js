@@ -6,7 +6,7 @@ const morgan = require('morgan');
 const passport = require('passport');
 const cors = require('cors');
 const { CLIENT_ORIGIN, PORT , DATABASE_URL } = require('./config');
-const {deck, shuffledDeck} = require('./tarotDeck.js');
+const {deck} = require('./tarotDeck.js');
 const { router: usersRouter } = require('./users');
 const { router: authRouter, localStrategy, jwtStrategy } = require('./auth');
 
