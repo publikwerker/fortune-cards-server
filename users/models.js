@@ -5,7 +5,6 @@ const mongoose = require('mongoose');
 mongoose.Promise = global.Promise;
 
 const ReadingSchema = mongoose.Schema({
-  date: {type: String,required: true,},
   comments: {type: String,},
   query: {type: String,},
   spread: [{
