@@ -28,5 +28,9 @@
     "passport-jwt": "^4.0.0",
     "passport-local": "^1.0.0",
     "shuffle-array": "^1.0.1"
+  },
+  "devDependencies": {
+    "chai": "*",
+    "mocha": "*"
   }
 }
