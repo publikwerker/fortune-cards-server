@@ -11,6 +11,7 @@ const deck= [
     The Fool and The Magus are essentially hermaphroditic Beings. The Source Energy proceeding from Kether is undifferentiated until it reaches Chokmah. There is no male-ness until it is defined within Chokmah.
     Their secret title is The Spirit of Athena.`,
     img: 'https://static1.squarespace.com/static/590185441b10e3a0176bb2bf/5c5a0d17eef1a12d338ba784/5c5a0d2e0d92978e7cd0c6d9/1549405670144/0+The+Fool.jpg?format=500w',
+    facing: 0,
   },
   {
     id: 'I',
@@ -22,6 +23,7 @@ const deck= [
     Like The Fool, The Magus is essentially hermaphroditic. The Source Energy proceeding from Kether is undifferentiated until it reaches Binah. There is no female-ness until it is defined withing Binah.
     Their secret title is the Magus of Power.`,
     img: 'https://static1.squarespace.com/static/590185441b10e3a0176bb2bf/5c5a0d17eef1a12d338ba784/5c5a0e39a4222f9c6522c406/1549405771423/1+The+Magus.jpg?format=500w',
+    facing: 0,
   }, 
   {
     id: 'II',
@@ -32,6 +34,7 @@ const deck= [
     For those who have experienced Conversation with their Holy Guardian Angel, some describe this Path as the intelligence or the thoughts of the Holy Guardian Angel. 
     In the symbology of Tetragrammaton, this is the Path connecting the Father to the Son.`,
     img: 'https://static1.squarespace.com/static/590185441b10e3a0176bb2bf/5c5a0d17eef1a12d338ba784/5c5a0ed0e5e5f0c85bf0a8f8/1549405919581/2+The+High+Priestess.jpg?format=500w',
+    facing: 0,
   }, 
   {
     id: 'III',
@@ -43,6 +46,7 @@ const deck= [
     Venus is attributed to Air and Earth, combining the highest spiritual with the lowest material qualities. For this reason, she symbolizes the Alchemical energy of Salt. Salt is the inactive principle of Nature and must be energized by Sulfur to maintain the whirling equilibrium of the Universe.
     It’s important to note that the shape of The Tree of Life comprised of the ten Sephiroth is that of Venus. “The doctrine implied is that the fundamental formula of the Universe is Love.`,
     img: 'https://static1.squarespace.com/static/590185441b10e3a0176bb2bf/5c5a0d17eef1a12d338ba784/5c5a0f38c83025d7e54da146/1549406018265/3+The+Empress.jpg?format=500w',
+    facing: 0,
   }, 
   {
     id: 'IV',
@@ -53,6 +57,7 @@ const deck= [
     Tzaddi is the path which connects Netzach to Yesod. Tzaddi has the numeric value of 90 and its final form has the value of 90,000. It means the Fish-hook.
     Its secret title is the Sun of the Morning, Chief among the Mighty.`,
     img: 'https://static1.squarespace.com/static/590185441b10e3a0176bb2bf/5c5a0d17eef1a12d338ba784/5c5a0f49ec212d2c7a35f770/1549406036090/4+The+Emperor.jpg?format=500w',
+    facing: 0,
   }, 
   {
     id: 'V',
@@ -63,6 +68,7 @@ const deck= [
     The card represents the Hebrew letter Vau, which means a Nail. The letter is associated with Taurus and has the numeric value of 6. The path connects Chokmah (Wisdom) to Chesed (Mercy).
     Its secret title is the Magus of the Eternal.`,
     img: 'https://static1.squarespace.com/static/590185441b10e3a0176bb2bf/5c5a0d17eef1a12d338ba784/5c5a0f5da4222f9c6522e632/1549406052111/5+The+Hierophant.jpg?format=500w',
+    facing: 0,
   }, 
   {
     id: 'VI',
@@ -72,13 +78,15 @@ const deck= [
     Atu VI refers to Gemini and is ruled by Mercury. The corresponding Hebrew letter is Zayin, which means a Sword. Crowley calls the sword “an engine of division”, and it’s good to note he doesn’t call it a tool. The suit of swords refers to air and the intellectual world. The path of Zayin is from Binah (Understanding) to Tipareth (Beauty). Crowley states this path depicts inspiration.
     Their secret title is the Children of the Voice: the Oracles of the Mighty God.`,
     img: 'https://static1.squarespace.com/static/590185441b10e3a0176bb2bf/5c5a0d17eef1a12d338ba784/5c5c5f1ef9619ad9e69184e2/1549557556684/6+The+Lovers.jpg?format=500w',
-  }, 
+    facing: 0,
+  },
   {
     id: 'VII',
     name: 'The Chariot',
     desc: `Atu VII is called The Chariot, and it is associated with the astrological sign of Cancer, the cardinal sign of Water. As The Hierophant brought down the Supernal Fire from Chokmah, The Chariot brings Supernal Water from The Great Sea, Binah (Understanding) to Geburah (Strength). This path is associated with the Hebrew letter Cheth, which means a Fence, and has the numerical value of eight.
     Its secret title is the Child of the Powers of the Waters: the Lord of the Triumph of Light.`,
     img: 'https://static1.squarespace.com/static/590185441b10e3a0176bb2bf/5c5a0d17eef1a12d338ba784/5c5c5f62fa0d606d797db642/1549557636539/7+The+Chariot.jpg?format=500w',
+    facing: 0,
   }, 
   {
     id: 'VIII',
@@ -89,6 +97,7 @@ const deck= [
     Lamed means Ox Goad and has the numerical value of 30. It is the path between Geburah, Strength, and Tipareth, Beauty.
     Its secret title is the Daughter of the Lords of Truth, the Ruler of the Balance.`,
     img: 'https://static1.squarespace.com/static/590185441b10e3a0176bb2bf/5c5a0d17eef1a12d338ba784/5c5c5f8e1905f47e33a7e829/1549557656600/8+Adjustment.jpg?format=500w',
+    facing: 0,
   }, 
   {
     id: 'IX',
@@ -98,6 +107,7 @@ const deck= [
     Yod is the path from Chesed (Mercy) to Tipareth (Beauty). On the Tree, it counter-balances Adjustment, Atu XIII. Yod means a Hand and has the numerical value of 10. It’s interesting to note that Virgo is ruled by and exalts Mercury.
     Its secret title is the Prophet of the Eternal, the Magus of the Voice of Power.`,
     img: 'https://static1.squarespace.com/static/590185441b10e3a0176bb2bf/5c5a0d17eef1a12d338ba784/5c5c5fa2e79c70a85404339e/1549557675039/9+The+Hermit.jpg?format=500w',
+    facing: 0,
   }, 
   {
     id: 'X',
@@ -106,6 +116,7 @@ const deck= [
     The idea behind this card is that change is constant. The elements continually revolve. We are directed to consider the Wheel of Fortune. A wheel spins, rolls, and travels anywhere you want to go with relative ease, but we must attain the axle, which does this without moving.
     Its secret title is the Lord of the Forces of Life.`,
     img: 'https://static1.squarespace.com/static/590185441b10e3a0176bb2bf/5c5a0d17eef1a12d338ba784/5c5c5fb4e5e5f02e133a3ff6/1549557695638/10+Fortune.jpg?format=500w',
+    facing: 0,
   }, 
   {
     id: 'XI',
@@ -114,6 +125,7 @@ const deck= [
     The Lust card is attributed to the sign of Leo and the letter Teth, which means a Serpent and has the numerical value of 9. Crowley says this is the most powerful of the twelve Zodiacal cards. Leo is the Kerub of Fire and is ruled by the Sun. The path of Teth connects Chesed, Mercy, to Geburah, Strength. The path is balanced both vertically and horizontally on the tree.
     Its secret title is the Daughter of the Flaming Sword.`,
     img: 'https://static1.squarespace.com/static/590185441b10e3a0176bb2bf/5c5a0d17eef1a12d338ba784/5c5c5fcc7817f77aa32d8c3b/1549557715712/11+Lust.jpg?format=500w',
+    facing: 0,
   }, 
   {
     id: 'XII',
@@ -121,6 +133,7 @@ const deck= [
     desc: `This card is represented by the letter Mem and the element of water. In particular, it represents the spiritual function of water in initiation to symbolize death and rebirth/baptism. The Hanged Man represents the descent of light into darkness in order to redeem it, but his is redemption without sacrifice, and specifically no self-sacrifice. This Hanged Man represents the God of the previous Aeon. “The whole idea of sacrifice is a misconception of nature.” Also, Crowley says, “Redemption is a bad word; it implies a debt. Fore every star possesses boundless wealth; the only proper was to deal with the ignorant is to bring them to the knowledge of their starry heritage. To do this, it is necessary to behave as must be done in order to get on good terms with animals and children: to treat them with absolute respect; even, in a certain sense, with worship.” Mem is the path between Geburah, Strength, and Hod, Splendor, and it has the numerical value of 40. Its final form has a value of 600.
     Its secret title is the Spirit of the Mighty Waters.`,
     img: 'https://static1.squarespace.com/static/590185441b10e3a0176bb2bf/5c5a0d17eef1a12d338ba784/5c5c5fe14785d3fecc205577/1549557742364/12+The+Hanged+Man.jpg?format=500w',
+    facing: 0,
   }, 
   {
     id: 'XIII',
@@ -129,6 +142,7 @@ const deck= [
     Nun is the path which connects Tipareth (Beauty) to Netzach (Victory). It has the numerical value of 50, and its final version has a value of 700.
     Its secret title is the Child of the Great Transformers, the Lord of the Gate of Death.`,
     img: 'https://static1.squarespace.com/static/590185441b10e3a0176bb2bf/5c5a0d17eef1a12d338ba784/5c5c5ff9085229ad86fdb78c/1549557766642/13+Death.jpg?format=500w',
+    facing: 0,
   }, 
   {
     id: 'XIV',
@@ -137,6 +151,7 @@ const deck= [
     The Art card was known as Temperance under the old Gods. They are a double card, neither male nor female but a little of both. They complete the Lovers card and form a double-double symbol, as both cards are both male and female. The Egyptian God Horus is said to rule the Age of Aquarius. Horus was a double god, male and female, a schizophrenic hermaphrodite. This New Age was prophesized to herald a great mingling of the sexes. Choosing the name Art over Temperance illustrates one of the great philosophical differences between the Ages. The only sin is restriction.
     Its secret title is the Daughter of the Reconcilers, the Bringer-Forth of Life.`,
     img: 'https://static1.squarespace.com/static/590185441b10e3a0176bb2bf/5c5a0d17eef1a12d338ba784/5c5c6011e4966b048bc9b40c/1549557800050/14+Art.jpg?format=500w',
+    facing: 0,
   }, 
   {
     id: 'XV',
@@ -146,6 +161,7 @@ const deck= [
     Atu IX, Zero, and XV represent the sacred name of God I A O. As such, they form the “threefold explanation of the male creative energy”.
     Its secret title is the Lord of the Gates of Matter, the Child of the Forces of Time.`,
     img: 'https://static1.squarespace.com/static/590185441b10e3a0176bb2bf/5c5a0d17eef1a12d338ba784/5c5c6033971a18566344730c/1549557828036/15+The+Devil.jpg?format=500w',
+    facing: 0,
   }, 
   {
     id: 'XVI',
@@ -155,6 +171,7 @@ const deck= [
     The Tower card is ruled also by Mars, so Crowley gives an alternate name: War. In the previous Aeon, this card was named the Blasted Tower. Its secret title is the Lord of the Hosts of the Mighty.
     All magickal symbols must be understood in a double sense, which includes the opposite, contradictory idea of its meaning. Again, there is the reminder that when a Thing is created, its opposite is also created. The destruction of both, or the Annihilation of both, is the return to the original Perfection.`,
     img: 'https://static1.squarespace.com/static/590185441b10e3a0176bb2bf/5c5a0d17eef1a12d338ba784/5c5c605115fcc0cc392c1ac9/1549557860139/16+The+Tower.jpg?format=500w',
+    facing: 0,
   }, 
   {
     id: 'XVII',
@@ -165,6 +182,7 @@ const deck= [
     Although Crowley states that this card, along with Trumps II and III, completes the Alchemical Triad of Mercury, Salt, and Sulfur, I’m going to assume that is also incorrect, and I’ll presume that the Star has assumed that role.
     Its secret title of this card is the Daughter of the Firmament; the Dweller between the Waters.`,
     img: 'https://static1.squarespace.com/static/590185441b10e3a0176bb2bf/5c5a0d17eef1a12d338ba784/5c5c6072fa0d606d797dc3e6/1549557889343/17+The+Star.jpg?format=500w',
+    facing: 0,
   }, 
   {
     id: 'XVIII',
@@ -174,6 +192,7 @@ const deck= [
     “Whatever horrors may afflict the soul, whatever abominations may excite the loathing of the heart, whatever terrors may assail the mind, the answer is the same at every stage: 'How splendid is the Adventure!'”
     Its secret title is the Ruler of Flux & Reflux, the Child of the Sons of the Mighty.`,
     img: 'https://static1.squarespace.com/static/590185441b10e3a0176bb2bf/5c5a0d17eef1a12d338ba784/5c5c608e53450aa0aa42b8b4/1549557904624/18+The+Moon.jpg?format=500w',
+    facing: 0,
   }, 
   {
     id: 'XIX',
@@ -182,6 +201,7 @@ const deck= [
     The Sun is attributed to the letter Resh, which means the Head and has a numerical value of 200. It connects Hod (Splendor) to Yesod (Foundation).
     The secret title of this card is the Lord of the Fire of the World.`,
     img: 'https://static1.squarespace.com/static/590185441b10e3a0176bb2bf/5c5a0d17eef1a12d338ba784/5c5c609eeef1a1953a66146f/1549557925170/19+The+Sun.jpg?format=500w',
+    facing: 0,
   }, 
   {
     id: 'XX',
@@ -191,6 +211,7 @@ const deck= [
     At this point it may be prudent to say a few things about Horus, our new Hierophant. Born of Nuit, the Goddess often portrayed as the starry night sky and who represents limitless possibities, and Hadit, a wingéd globe who represents the concept of consciousness as an individual, concentrated point of view of the greater Whole. Horus, the hawk-headed god was born, but they are a double god. Their extroverted side is Ra-hoor-khuit, and their passive or introverted form is Hoor-pa-kraat. Thus, this family forms an example of the Tetragrammaton, with Horus being both Son and Daughter.
     Its secret title is the Spirit of the Primal Fire.`,
     img: 'https://static1.squarespace.com/static/590185441b10e3a0176bb2bf/5c5a0d17eef1a12d338ba784/5c5c60b1f9619ad9e6919bc8/1549557948846/20+The+Aeon.jpg?format=500w',
+    facing: 0,
   }, 
   {
     id: 'XXI',
@@ -201,6 +222,7 @@ const deck= [
     This Path forms a link from Malkuth (Kingdom), or the world as we know it, to Yesod (Foundation) and the Astral plane. Symbolically, this Path is the connection between the Moon and the Earth, between our conscious mind and our physical being, and between our internal world and our shared reality.
      The secret title of The Universe is The Great One of the Night of Time.`,
     img: 'https://static1.squarespace.com/static/590185441b10e3a0176bb2bf/5c5a0d17eef1a12d338ba784/5c5c60c6c83025da56a62cfb/1549557972954/21+The+Universe.jpg?format=500w',
+    facing: 0,
   },
   {
     id:'Fire of Air',
@@ -210,7 +232,8 @@ const deck= [
     In the I Ching, the fiery part of Air is depicted by the 32nd Hexagram Hêng, Duration. This seems to carry a warning that the candle who burns brightest, burns quickest.
     The Father of Swords rules the Zodiac in transition from Taurus to Gemini. Any person born with their Sun or Ascendent in the last third of Taurus or the first two thirds of Gemini is ruled by the Father of Air. 
     The person signified by this card is active, subtle, clever, fierce, delicate, and courageous. They may act too impulsively or be unable to make a decision so that their actions are easily overcome by their opposition. Here, Crowley warns that “Inadequate violence spells futility.”`,
-    img:'https://static1.squarespace.com/static/590185441b10e3a0176bb2bf/5c5a0d17eef1a12d338ba784/5c5f5747f9619ad3547023e2/1549752395247/father+of+air.jpg?format=500w'
+    img:'https://static1.squarespace.com/static/590185441b10e3a0176bb2bf/5c5a0d17eef1a12d338ba784/5c5f5747f9619ad3547023e2/1549752395247/father+of+air.jpg?format=500w',
+    facing: 0,
   },
   {
     id:'Water of Air',
@@ -223,6 +246,7 @@ const deck= [
     The Mother of Swords rules the Zodiac in the transition from Virgo to Libra. Anyone born with their Sun or Ascendent in the last third of Virgo or the first two thirds of Libra is ruled by the Mother of Air.
     The person signified by this card is intensely perceptive, observant, individualistic, confident, graceful, gracious, and just, or else sly, deceitful, unreliable, and dangerously beautiful.`,
     img:'https://static1.squarespace.com/static/590185441b10e3a0176bb2bf/5c5a0d17eef1a12d338ba784/5c5f5776085229b582bc9425/1549752419024/mother+of+air.jpg?format=500w',
+    facing: 0,
   },
   {
     id:'Air of Air',
@@ -235,6 +259,7 @@ const deck= [
     The Son of Air rules the Zodiac in the transition from Capricorn to Aquarius. Any person who is born with their Sun or Ascendent in the last third of Capricorn or the first two thirds of Aquarius is ruled by the Son of Swords.
     A person signified by such a card should be purely intellectual, full of jumbled ideas, intensely clever, rational, but unstable of purpose, and indifferent to even their own ideas. They reduce everything to unreality “by removing its substance and transmuting it to an ideal world of ratiocination which is purely formal and out of relation to any facts, even those upon which it is based.” `,
     img:'https://static1.squarespace.com/static/590185441b10e3a0176bb2bf/5c5a0d17eef1a12d338ba784/5c5f579e971a1829e8f28fb5/1549752437385/son+of+air.jpg?format=500w',
+    facing: 0,
   },
   {
     id:'Earth of Air',
@@ -246,6 +271,7 @@ const deck= [
     Although they have no correlation with the Zodiac, the Daughters rule the sky over the Earth in quadrants moving eastward from the Great Pyramid. The Daughter of Air rules the Americas.
     A person signified by the Daughter of Swords is dexterous in managing controversial affairs and in settling controversies. She is stern, vengeful, clever, firm, aggressive, and possesses a destructive logic. `,
     img:'https://static1.squarespace.com/static/590185441b10e3a0176bb2bf/5c5a0d17eef1a12d338ba784/5c5f5640971a1829e8f2824d/1549752354269/daughter+of+air.jpg?format=500w',
+    facing: 0,
   },
   {
     id:'Fire of Earth',
@@ -257,6 +283,7 @@ const deck= [
     The Father of Coins rules the Zodiac in the transition from Leo to Virgo. Anyone born with their Sun or Ascendent in the last third of Leo or the first two thirds of Virgo is ruled by the Father of Earth. 
     Those signified by this card tend to be dull, heavy, preoccupied with material things, laborious and patient, but lacking initiative, courage, or intellect. Crowley laments how they “are always irritably meddling about petty matters; they interfere with, and inevitably spoil, whatever comes their way.” `,
     img:'https://static1.squarespace.com/static/590185441b10e3a0176bb2bf/5c5a0d17eef1a12d338ba784/5c5f58d0e5e5f0cc900579bc/1549752544775/father+of+earth.jpg?format=500w',
+    facing: 0,
   },
   {
     id:'Water of Earth',
@@ -269,6 +296,7 @@ const deck= [
     The Mother of Earth rules the Zodiac in transition from Sagittarius to Capricorn. Any person who is born with their Sun or Ascendent in the last third of Sagittarius or the first two thirds of Capricorn is ruled by the Mother of Coins. 
     The person signified by this card should possess “the finest of the quieter qualities.” They are intuitive, unassuming, quiet, ambitious, hardworking, practical, sensible, domesticated, kind, affectionate, and possessing a great heart, if not great intelligence.`,
     img:'https://static1.squarespace.com/static/590185441b10e3a0176bb2bf/5c5a0d17eef1a12d338ba784/5c5f5aae71c10be188eb1765/1549753020211/mother+of+earth.jpg?format=500w',
+    facing: 0,
   },
   {
     id:'Air of Earth',
@@ -281,6 +309,7 @@ const deck= [
     The Son of Coins rules the Zodiac in the transition from Aries to the Taurus. Anyone born with their Sun or Ascendent in the last third of Aries or the first two thirds of Taurus is ruled by the Son of Earth.
     The person signified by the Son card is imperturbable, ingenious, energetic, competent, thoughtful, cautious, and trustworthy. He is a capable manager, a persevering and capable worker, a seeker of new uses for common things, and one who adapts his circumstances to his purposes in a slow, steady, well-thought out plan. Often lacking in emotion, he seems insensitive. He is slow to anger and even slower to placate. `,
     img:'https://static1.squarespace.com/static/590185441b10e3a0176bb2bf/5c5a0d17eef1a12d338ba784/5c5f5911e4966be7f757c0c0/1549752612844/son+of+earth.jpg?format=500w',
+    facing: 0,
   },
   {
     id:'Earth of Earth',
@@ -292,6 +321,7 @@ const deck= [
     Although they have no correlation with the Zodiac, the Daughters rule the sky over the Earth in quadrants moving eastward from the Great Pyramid. The Daughter of Earth rules the quadrant of the Earth covered by Europe and Africa.
     The person signified by this card is “Womanhood in its ultimate projection. She contains all the characteristics of woman, and it would depend entirely upon the influences to which she is subjected whether one or another becomes manifest”. `,
     img:'https://static1.squarespace.com/static/590185441b10e3a0176bb2bf/5c5a0d17eef1a12d338ba784/5c5f57c50d929794cf4f7644/1549752458168/daughter+of+earth.jpg?format=500w',
+    facing: 0,
   },
   {
     id:'Fire of Fire',
@@ -304,6 +334,7 @@ const deck= [
     The Father of Wands rules the Zodiac in the transition from the sign of Scorpio to Sagittarius. Any person who is born with their Sun or their Ascendent in the last third of Scorpio or the first two thirds of Sagittarius is ruled by the Father of Fire.
     The person signified by this card is active, generous, and fierce, but impetuous, prideful, impulsive, swift and unpredictable. “He is ... ill-fitted to carry on his action; he has no means of modifying it according to circumstances. If he fails in his first effort, he has no resource.” `,
     img:'https://static1.squarespace.com/static/590185441b10e3a0176bb2bf/5c5a0d17eef1a12d338ba784/5c5f59a69b747a284074bef4/1549752770542/father+of+fire.jpg?format=500w',
+    facing: 0,
   },
   {
     id:'Water of Fire',
@@ -316,6 +347,7 @@ const deck= [
     The Mother of Wands rules the Zodiac in the transition from the sign of Pisces to Aries. Any person born with their Sun or Ascendent in the last third of Pisces or the first two thirds of Aries is ruled by the Mother of Fire.
     The person signified by this card is kind, generous, adaptable, persistently energetic, calmly authoritative, and immensely friendly and loving. Alternately, she could be self-complacent, easily deceived, broody, quick to take offense or revenge without justification.`,
     img:'https://static1.squarespace.com/static/590185441b10e3a0176bb2bf/5c5a0d17eef1a12d338ba784/5c5f59ccee6eb02f5340c564/1549752791423/mother+of+fire.jpg?format=500w',
+    facing: 0,
   },
   {
     id:'Air of Fire',
@@ -328,6 +360,7 @@ const deck= [
     The Son of Wands rules the Zodiac in the transition from Cancer to Leo. Anyone born with their Sun or Ascendent in the last third of Cancer or the first two thirds of Leo is ruled by the Son of Fire.
     The person signified by this card is swift and strong, but may be impulsive, easily influenced, and indecisive. They usually win in the long run due to perseverence and an enormous capacity for work without lust of result. `,
     img:'https://static1.squarespace.com/static/590185441b10e3a0176bb2bf/5c5a0d17eef1a12d338ba784/5c5f59e1e4966be7f757c92b/1549752826497/son+of+fire.jpg?format=500w',
+    facing: 0,
   },
   {
     id:'Earth of Fire',
@@ -339,6 +372,7 @@ const deck= [
     Although they have no correlation with the Zodiac, the Daughters rule the sky over the Earth in quadrants moving eastward from the Great Pyramid. The first, the Daughter of Wands, rules the Heavens over most of Asia and India. 
     The Daughters also represent certain types of “elemental” human beings whom “we recognize by their lack of all sense of responsibility, whose moral qualities seem to lack ‘bite’”. Those signified by this card are brilliant, daring, ambitious, and energetic. `,
     img:'https://static1.squarespace.com/static/590185441b10e3a0176bb2bf/5c5a0d17eef1a12d338ba784/5c5f593d71c10be188eb08a9/1549752655440/daughter+of+fire.jpg?format=500w',
+    facing: 0,
   },
   {
     id:'Fire of Water',
@@ -350,6 +384,7 @@ const deck= [
     The Father of Cups rules the Zodiac in transition from Aquarius to Pisces. Any person with their Sun or Ascendent in the last third of Aquarius or the first two thirds of Pisces is ruled by the Father of Water.
     The person signified by the Father of Cups is graceful and passively amiable. They are “exceedingly sensitive to external influence” but are essentially innocent and pure. They respond to attraction quickly and enthusiasticly but not enduringly. `,
     img:'https://static1.squarespace.com/static/590185441b10e3a0176bb2bf/5c5a0d17eef1a12d338ba784/5c5f5a27971a1829e8f2a90f/1549752882032/father+of+water.jpg?format=500w',
+    facing: 0,
   },
   {
     id:'Water of Water',
@@ -362,6 +397,7 @@ const deck= [
     The Mother of Cups rules the Zodiac in transition from Gemini to Cancer. Anyone born with their Sun or Ascendent in the last third of Gemini or the first two thirds of Cancer is ruled by the Mother of Water.
     The person signified by the Mother of Cups is dreamy, tranquil, and able to receive and transmit without being affected.`,
     img:'https://static1.squarespace.com/static/590185441b10e3a0176bb2bf/5c5a0d17eef1a12d338ba784/5c5f5a3e085229b582bcaeb6/1549752912223/mother+of+water.jpg?format=500w',
+    facing: 0,
   },
   {
     id:'Air of Water',
@@ -374,6 +410,7 @@ const deck= [
     The Son rules the Zodiac in the transition from Libra to Scorpio. Anyone born with their Sun or Ascendent in the last third of Libra or the first two thirds of Scorpio is ruled by the Son of Water.
     The person represented by this card possesses characteristics of subtlety, secret violence, and craft. They are calm on the surface, but underneath are raging currents of passion. They are ruthless, capable of immense power, and without conscience. `,
     img:'https://static1.squarespace.com/static/590185441b10e3a0176bb2bf/5c5a0d17eef1a12d338ba784/5c5f5a5ae2c483879c70f49f/1549752931159/son+of+water.jpg?format=500w',
+    facing: 0,
   },
   {
     id:'Earth of Water',
@@ -385,6 +422,7 @@ const deck= [
     Although they have no correlation with the Zodiac, the Daughters rule the sky over the Earth in quadrants moving eastward from the Great Pyramid. The Daughter of Cups rules over the Pacific Rim. 
     The Daughters also represent certain types of “elemental” human beings whom “we recognize by their lack of all sense of responsibility, whose moral qualities seem to lack ‘bite’”. Those signified by this card are gracious, sweet, voluptuous, gentle, kind, and tender. “Silently and effortlessly she goes about her work.” `,
     img:'https://static1.squarespace.com/static/590185441b10e3a0176bb2bf/5c5a0d17eef1a12d338ba784/5c5f5a088165f527b771cb5d/1549752863148/daughter+of+water.jpg?format=500w',
+    facing: 0,
   },
   {
     id:'1 of Earth',
@@ -396,6 +434,7 @@ const deck= [
     The importance of this card cannot be understated. In the previous Aeon, let’s call it the Age of the Fish and the Father, the concept of the Earth was seen as a passive, immobile, dead, evil element. In the new Aeon, the Age of the Child, the Earth is restored to a living, whirling ball of energy, as we know every star, every planet is a whirling sphere. The color for Earth in the New Aeon is the green of spring, not black.
     The Ace and Princess of Coins rule the quadrant of the globe over Europe and Africa.`,
     img:'https://static1.squarespace.com/static/590185441b10e3a0176bb2bf/5c5a0d17eef1a12d338ba784/5c5f5b44eb39311832f0fd58/1549753317012/1.ace+of+coins.jpg?format=500w',
+    facing: 0,
   },
   {
     id:'2 of Earth',
@@ -407,6 +446,7 @@ const deck= [
     “This suit being of Earth, there is a connection with the Princesses.... Earth is the throne of Spirit”.
     In respect to the harmonious interplay of the Four Elements, this card may be considered a picture of the complete manifested Universe.`,
     img:'https://static1.squarespace.com/static/590185441b10e3a0176bb2bf/5c5a0d17eef1a12d338ba784/5c5f5b990d929794cf4f9ab7/1549753257394/2.deuce+of+coins.jpg?format=500w',
+    facing: 0,
   },
   {
     id:'3 of Earth',
@@ -416,6 +456,7 @@ const deck= [
     Binah is attributed to the planet Saturn, the God of Time, and she represents the Great Mother, the Sea, and the primary Heh of Tetragrammaton. There is some resonance between this card and The Mother of Coins.
     Astrologically, this card is attributed to Mars in Capricorn. Mars is exalted in Capricorn, and his energy is constructive like that of the builder or engineer. This card “exhibits the result of the idea of Earth, of the crystallization of forces”, the “material establishment of the idea of the Universe,” such as the creation of the triplicities, e.g.: Mercury, Sulfur, and Salt; Sattvas, Rajas, and Tamas; Aleph, Shin, and Mem; Air, Fire, and Water.`,
     img:'https://static1.squarespace.com/static/590185441b10e3a0176bb2bf/5c5a0d17eef1a12d338ba784/5c5f5bede4966be7f757dc12/1549753347903/3.three+of+coins.jpg?format=500w',
+    facing: 0,
   },
   {
     id:'4 of Earth',
@@ -426,6 +467,7 @@ const deck= [
     In the I Ching, Sun in Capricorn is represented by the second hexagram, K’un, The Receptive, Big Earth, the female principle.
     “The card is called Power. It is the power which dominates and stabilizes everything, but manages its affairs more by negotiation, by pacific methods, than by any assertion of itself. It is Law, the Constitution, with no aggressive element”.`,
     img:'https://static1.squarespace.com/static/590185441b10e3a0176bb2bf/5c5a0d17eef1a12d338ba784/5c5f5c187817f71b5bdc5788/1549753382333/4.four+of+coins.jpg?format=500w',
+    facing: 0,
   },
   {
     id:'5 of Earth',
@@ -435,6 +477,7 @@ const deck= [
     Astrologically, this card is attributed to Mercury in Taurus, two opposing energies, whose relationship here embodies Intelligence applied to Labor. Crowley says the meaning of this card, Worry, is akin to the meaning of the word when we say “dogs worry sheep”, i.e. to strangle.
     Although the Fives relate to Disorder , Disruption, and Revolution, the affect is softer in the suit of Coins. The Coins are not dead and flat. In the New Age, the Coins are are spinning and whirling, as we now recognize all matter to behave, and “their revolution serves to stabilize them. There is no action... that can affect the issue.” The effect is one of intense strain; yet long-continued inaction is implied, as well.`,
     img:'https://static1.squarespace.com/static/590185441b10e3a0176bb2bf/5c5a0d17eef1a12d338ba784/5c5f5c304e17b65729bda971/1549753401733/5.five+of+coins.jpg?format=500w',
+    facing: 0,
   },
   {
     id:'6 of Earth',
@@ -447,6 +490,7 @@ const deck= [
     Astrologically, this card represents the Moon in Taurus. The Moon being, in this case, representative of the increase toward perfection and especially of the transient nature of that condition. Remember that all success is temporary. Read 1001 Arabian Nights to see some examples of this.
     The two Trump cards, The Lovers, and The High Priestess strongly influence the Sixes. There is some resonance between this card and the Son of Coins.`,
     img:'https://static1.squarespace.com/static/590185441b10e3a0176bb2bf/5c5a0d17eef1a12d338ba784/5c5f5c424e17b65729bda9e2/1549753436446/6.six+of+coins.jpg?format=500w',
+    facing: 0,
   },
   {
     id:'7 of Earth',
@@ -456,6 +500,7 @@ const deck= [
     Netzach is attributed to the planet Venus, who is attributed to both Air and Earth. In the suit of Coins, her nature is predominantly Earthy, heavy, and weighed down. Astrologically, this card represents Saturn in Taurus. The God of Time is a heavy weight upon the slow ox, a situation unfavorable to Venus. “There is no effort here; not even dream”. The suit of Earth, Coins, Disks, etc., is completely passive, and this card represents utter failure and abandoned labor.
     The Seven “represents the degeneration of the element. Its utmost weakness is exposed in every case.” `,
     img:'https://static1.squarespace.com/static/590185441b10e3a0176bb2bf/5c5a0d17eef1a12d338ba784/5c5f5c66f9619ad3547054c1/1549753456100/7.seven+of+coins.jpg?format=500w',
+    facing: 0,
   },
   {
     id:'8 of Earth',
@@ -466,6 +511,7 @@ const deck= [
     In the I Ching, Sun in Virgo corresponds to the 33rd Hexagram, Tun, Retreat, Big Air. Its meaning is akin to retiring. The Moon retires from her manifestation back to her conjunction with the Sun, similar to when, in Virgo, the Energy of the Sun withdraws into the fallow Earth. In this card, there is very much the idea of a seed planted. All there is to do is wait for a rainy day. In material matters, “especially those of money, there is a sort of strength in doing nothing at all.”
     This card corresponds to the Geomantic figure Populus.`,
     img:'https://static1.squarespace.com/static/590185441b10e3a0176bb2bf/5c5a0d17eef1a12d338ba784/5c5f5c7a971a1829e8f2be9f/1549753480164/8.eight+of+coins.jpg?format=500w',
+    facing: 0,
   },
   {
     id:'9 of Earth',
@@ -477,6 +523,7 @@ const deck= [
     As the fullest Idea of the force represented by Coins, Disks, Pentacles, et al., this card is “too dull to care; it reckons up its winnings”, and “purrs with satisfaction at having harvested what it sowed”. There is a sense that the harvest is the result of Work in accordance with Will, and that is all is for the best.
     Yesod is attributed to the Moon. Astrologically, this card is attributed to Venus in Virgo, a lucky combination. This card is aptly named. Gain represents good luck in and good management of material affairs, good favor, and popularity. Crowley says the Nine can be considered as the best that can be obtained. `, 
     img:'https://static1.squarespace.com/static/590185441b10e3a0176bb2bf/5c5a0d17eef1a12d338ba784/5c5f5c97e2c483879c710b26/1549753497367/9.nine+of+coins.jpg?format=500w',
+    facing: 0,
   },
   {
     id:'10 of Earth',
@@ -486,6 +533,7 @@ const deck= [
     Astrologically, this card is attributed to Mercury in Virgo. It implies that acquired wealth must be spent or else it becomes inert and lost. Remember that these Coins are spinning, as all matter on the Earthly Plane is made of whirling energy. Wealth needs to keep moving or it ceases to be. Mercury in Virgo is attributed to the Geomantic figure of Conjunctio, the mating of the active and the receptive.
     The Lord of Wealth represents the Magical Formula and the cycle of regeneration. “Here again is written this constantly recurring doctrine, that as soon as one gets to the bottom one finds oneself at the top”.`,
     img:'https://static1.squarespace.com/static/590185441b10e3a0176bb2bf/5c5a0d17eef1a12d338ba784/5c5f5caf6e9a7f5815fa55c8/1549753535233/10.ten+of+coins.jpg?format=500w',
+    facing: 0,
   },
   {
     id:'1 of Water',
@@ -497,6 +545,7 @@ const deck= [
     There is an affinity between this card and the Mother of Cups. In some respects, this card is the primary Heh of Tetragrammaton. As such, it is associated with the second Sephiroth, Binah (Understanding), the Great Mother, who is in turn associated with the planet Saturn and the Sea. 
     The Ace and Princess of Cups rule the quadrant of the Heavens over the Pacific.`,
     img:'https://static1.squarespace.com/static/590185441b10e3a0176bb2bf/5c5a0d17eef1a12d338ba784/5c5f5ccde2c483879c710d39/1549753565280/1.ace+of+cups.jpg?format=500w',
+    facing: 0,
   },
   {
     id:'2 of Water',
@@ -507,6 +556,7 @@ const deck= [
     As the first manifestation in the suit of Water (the Ace is only the seed of the element), the Two is the truest and highest manifestation of the element. In the suit of Water, it refers to Love, “which recovers unity from dividuality by mutual annihilation”, and refers to the interplay of the male and the female, “interpreted in the largest sense”.
     Astrologically, this card is attributed to Venus, the planet of Love, in Cancer, an Astrological sign associated with a lot of feeling.`,
     img:'https://static1.squarespace.com/static/590185441b10e3a0176bb2bf/5c5a0d17eef1a12d338ba784/5c5f5dc224a6947f23ec98c1/1549753821462/2.deuce+of+cups.jpg?format=500w',
+    facing: 0,
   },
   {
     id:'3 of Water',
@@ -518,6 +568,7 @@ const deck= [
     Binah is attributed to the planet Saturn, and this card has an affinity with the Mother of Cups and the Ace of Cups.
      Astrologically, this card is attributed to Mercury in Cancer. Mercury comes bearing messages from the Gods to Cancer, the most receptive of the signs.`,
     img:'https://static1.squarespace.com/static/590185441b10e3a0176bb2bf/5c5a0d17eef1a12d338ba784/5c5f5ce7971a1829e8f2c36c/1549753583746/3.three+of+cups.jpg?format=500w',
+    facing: 0,
   },
   {
     id:'4 of Water',
@@ -527,6 +578,7 @@ const deck= [
     Astrologically, this card is attributed to Moon in Cancer, the sign it rules. This is a very “moon-y” card in general. In Geomancy it corresponds to Via and Populus, which are related to the waxing and waning of the moon.
     Four is a stable, static, and somewhat stagnant number, but the stability of the four implies the disorder of the five. Disruption is to come! `,
     img:'https://static1.squarespace.com/static/590185441b10e3a0176bb2bf/5c5a0d17eef1a12d338ba784/5c5f5de6b208fc722ac9a796/1549754962405/4.four+of+cups.jpg?format=500w',
+    facing: 0,
   },
   {
     id:'5 of Water',
@@ -537,6 +589,7 @@ const deck= [
     Astrologically, this card is attributed to Mars in Scorpio, his own house (fig. 2). In Geomancy, Mars in Scorpio is attributed to Rubeus, an evil and unlucky omen. While Mars is often a destructive force and Scorpio suggests putrefaction, this powerful male influence does not “show actual decay, only the beginning of destruction; hence, the anticipated pleasure is frustrated.”
     This card represents “the triumph of matter over spirit.”`,
     img:'https://static1.squarespace.com/static/590185441b10e3a0176bb2bf/5c5a0d17eef1a12d338ba784/5c5f5d1d53450a883a1b4770/1549754962708/5.five+of+cups.jpg?format=500w',
+    facing: 0,
   },
   {
     id:'6 of Water',
@@ -550,6 +603,7 @@ const deck= [
     In the I Ching, this card is equivalent to the 20th Hexagram, Kuan, Contemplation, View, Big Earth.
     The two Trump cards, The Lovers, and The High Priestess strongly influence the Sixes. There is some resonance between this card and the Son of Cups.`,
     img:'https://static1.squarespace.com/static/590185441b10e3a0176bb2bf/5c5a0d17eef1a12d338ba784/5c5f5e3f104c7bb62a0ca0f2/1549753921567/6.six+of+cups.jpg?format=500w',
+    facing: 0,
   },
   {
     id:'7 of Water',
@@ -561,6 +615,7 @@ const deck= [
     “There is something almost suicidal in this card. It is particularly bad because there is nothing whatever to balance it.”
     The Seven “represents the degeneration of the element. Its utmost weakness is exposed in every case.” `,
     img:'https://static1.squarespace.com/static/590185441b10e3a0176bb2bf/5c5a0d17eef1a12d338ba784/5c5f5e84e2c483879c711c17/1549754709259/7.seven+of+cups.jpg?format=500w',
+    facing: 0,
   },
   {
     id:'8 of Water',
@@ -569,6 +624,7 @@ const deck= [
     Hod is attributed to the planet Mercury, but the reference to Saturn in Pisces overpowers this influence. “Pisces is calm but stagnant water; and Saturn deadens it completely.”
     Crowley says, “This card is the very apex of unpleasantness. It is ruled by the planet Saturn; time, sorrow have descended upon pleasure, and there is no strength in the element of water which can react against it”. `,
     img:'https://static1.squarespace.com/static/590185441b10e3a0176bb2bf/5c5a0d17eef1a12d338ba784/5c5f61639140b743f63cf49a/1549754962401/8.eight+of+cups.jpg?format=500w',
+    facing: 0,
   },
   {
     id:'9 of Water',
@@ -578,6 +634,7 @@ const deck= [
     Reflecting the light of the Sun, the Moon is its mirror. The Nine receives energy directly down the middle pillar from the Six of Cups, the Lord of Pleasure, as well as from the Seven and Eight, with whom Yesod forms the bottommost point of the Astral Triangle. Yesod is where the Watery Energy crystalizes as it is directed toward the Earth.
     Astrologically, this card is attributed to Jupiter in Pisces. Jupiter in Pisces is good fortune, but “only in the sense of complete satiety. The fullest satisfaction is merely the matrix of a further putrefaction”.`,
     img:'https://static1.squarespace.com/static/590185441b10e3a0176bb2bf/5c5a0d17eef1a12d338ba784/5c5f61c7104c7bb62a0cc39c/1549754962684/9.nine+of+cups.jpg?format=500w',
+    facing: 0,
   },
   {
     id:'10 of Water',
@@ -586,6 +643,7 @@ const deck= [
     Astrologically, this card is attributed to Mars in Pisces. Violent and Fiery Mars is a disruptive influence for the peaceful, spiritual waters of Pisces. The waters have become stagnant. This is the natural order of perfection leading to putrefaction.
     Every ending holds the seeds of a new beginning. Having reached the Malkuth of the Watery Briah (fig. 6), this card has a natural corellation with the Kether of Airy Yetzirah, the Ace of Swords,who is named The Root of the Powers of Air. As the Malkuth of Water, this card also has an affinity for the Daughter of Cups and the final Heh of Tetragrammaton.`,
     img:'https://static1.squarespace.com/static/590185441b10e3a0176bb2bf/5c5a0d17eef1a12d338ba784/5c5f61f44192028682d94aeb/1549754962385/10.ten+of+cups.jpg?format=500w',
+    facing: 0,
   },
   {
     id:'1 of Air',
@@ -598,6 +656,7 @@ const deck= [
     Ruach also means Spirit. In many senses, this card is as much about Spirit as it is about Air. The suit of Air is also the suit of Spirit.
     The Ace and Princess of Swords rule the quadrant of the heavens  over the Americas.`,
     img:'https://static1.squarespace.com/static/590185441b10e3a0176bb2bf/5c5a0d17eef1a12d338ba784/5c5f6223a4222fa3c7d51d7b/1549754962389/1.ace+of+swords.jpg?format=500w',
+    facing: 0,
   },
   {
     id:'2 of Air',
@@ -608,6 +667,7 @@ const deck= [
     Herein is the concept that if one thing exists, then so must its opposite. There is also a magical law that if one thing is created, so is its opposite. The Law of the Conservation of Force. The sum total of the infinite energy of the entire Universe is Zero.
     The Two of Swords governs all intellectual manifestations such as reason, thought, and speech. Also, the twos always represent the Word and the Will.`,
     img:'https://static1.squarespace.com/static/590185441b10e3a0176bb2bf/5c5a0d17eef1a12d338ba784/5c5f62b5652deabd42dbf5c4/1549755139601/2.deuce+of+swords.jpg?format=500w',
+    facing: 0,
   },
   {
     id:'3 of Air',
@@ -619,6 +679,7 @@ const deck= [
     Crowley references the womb of chaos and an “intense lurking passion to create, but its children are monsters.... Secrecy is here, and Perversion”.
     There is an affinity between this card and the Mother of Swords. `,
     img:'https://static1.squarespace.com/static/590185441b10e3a0176bb2bf/5c5a0d17eef1a12d338ba784/5c5f6321652deabd42dbf95b/1549755183676/3.three+of+swords.jpg?format=500w',
+    facing: 0,
   },
   {
     id:'4 of Air',
@@ -629,6 +690,7 @@ const deck= [
     Astrologically, Chesed is attributed to Jupiter, and this card also is attributed to Jupiter in Libra. The double emphasis of the Rule of Law in the suit of Swords gives a sense of military rule or armed peace. 
     As with the other Fours, the stability inherent in the number implies the coming disturbance and upset inherent in the Fives. The process is a “mess, usually represented by foetid stench”, but the Work must be done.`,
     img:'https://static1.squarespace.com/static/590185441b10e3a0176bb2bf/5c5a0d17eef1a12d338ba784/5c5f64eee2c483879c7157b0/1549755632936/4.four+of+swords.jpg?format=500w',
+    facing: 0,
   },
   {
     id:'5 of Air',
@@ -639,6 +701,7 @@ const deck= [
     Astrologically, this card is attributed to Venus in Aquarius. Venus is the planet of relationships, but Aquarius  prefers a more ideal and intellectual approach.
     “The intellect has become enfeebled by sentiment. This card implies defeat due to pacifism. Treachery also may be implied.” `,
     img:'https://static1.squarespace.com/static/590185441b10e3a0176bb2bf/5c5a0d17eef1a12d338ba784/5c5f6508ec212d3859c9a975/1549756236157/5.five+of+swords.jpg?format=500w',
+    facing: 0,
   },
   {
     id:`6 of Air`,
@@ -652,6 +715,7 @@ const deck= [
     Astrologically, this card is attributed to Mercury in Aquarius. The previous card’s divisive Martian influence has been changed to favor a harmonious Mercurial intelligence. Intelligence turns from the ideas of division and quarrel and wins success. 
     The two Trump cards, The Lovers, and The High Priestess, strongly influence the Sixes. There is resonance with this card and both the Ace and Son of Swords. `,
     img:'https://static1.squarespace.com/static/590185441b10e3a0176bb2bf/5c5a0d17eef1a12d338ba784/5c5f6523652deabd42dc0c06/1549756236163/6.six+of+swords.jpg?format=500w',
+    facing: 0,
   },
   {
     id:`7 of Air`,
@@ -662,6 +726,7 @@ const deck= [
     Astrologically, this card is attributed to the Moon in Aquarius. This shows the influence of a mutable, watery planet in a passive, Airy sign. There is an emotional detachment that thwarts Venus’ intentions.
     The Seven “represents the degeneration of the element. Its utmost weakness is exposed in every case.” `,
     img:'https://static1.squarespace.com/static/590185441b10e3a0176bb2bf/5c5a0d17eef1a12d338ba784/5c5f653b0d929794cf4ff7c6/1549756236166/7.seven+of+swords.jpg?format=500w',
+    facing: 0,
   },
   {
     id:`8 of Air`,
@@ -672,6 +737,7 @@ const deck= [
     Astrologically, this card is attributed to Jupiter in Gemini, and despite its good intentions, this card symbolizes sheer unforeseen bad luck, the tendency for the best laid schemes o’ mice an’ men to gang aft a-gle, or being good natured when it’s disastrous to be so. A lack of persistence is also implied.
     Crowlely says the name for this card in the old pack is “Shortened Force”.`,
     img:'https://static1.squarespace.com/static/590185441b10e3a0176bb2bf/5c5a0d17eef1a12d338ba784/5c5f6557c83025b45f5db28c/1549756236180/8.eight+of+swords.jpg?format=500w',
+    facing: 0,
   },
   {
     id:`9 of Air`,
@@ -683,6 +749,7 @@ const deck= [
     The Sephira of Yesod is attributed to the Moon. Astrologically, The Lord of Cruelty represents Mars in Gemini. Gemini is ruled by Mercury, and the introduction of Mars brings an antogonistic energy. The passive energies of the Moon have little influence.
     The way of dealing with this card is “passive resistance, resignation, and acceptance of martyrdom”.`,
     img:'https://static1.squarespace.com/static/590185441b10e3a0176bb2bf/5c5a0d17eef1a12d338ba784/5c5f6572e2c483879c715d62/1549756236170/9.nine+of+swords.jpg?format=500w',
+    facing: 0,
   },
   {
     id:`10 of Air`,
@@ -695,6 +762,7 @@ const deck= [
     If one goes on fighting long enough, all ends in destruction. Ruin can never be complete, because once things are bad enough, they start to build up again.
     This card has an affinity for the Daughter of Swords and the final Heh of Tetragrammaton. In addition, this card has a correlation with the Ace of Coins. The energy has reached the Malkuth of Yetzirah, and it must continue to the Kether of Assiah (fig 6.). The seed of one is found within the other. The cycle begins anew.`,
     img:'https://static1.squarespace.com/static/590185441b10e3a0176bb2bf/5c5a0d17eef1a12d338ba784/5c5f65974e17b65729be02ec/1549756236406/10.ten+of+swords.jpg?format=500w',
+    facing: 0,
   },
   {
     id:`1 of Fire`,
@@ -704,6 +772,7 @@ const deck= [
     The Root of the Powers of Fire is the first spark at the top of the very first Tree in the very first, fiery Plane, Atziluth. Crowley says, “It is the primordial Energy of the Divine manifesting in Matter at so early a stage that it is not yet definitely formulated as Will.” 
     The Ace of Wands and the Princess of Wands rule the quadrant of the Heavens over Asia.`,
     img:'https://static1.squarespace.com/static/590185441b10e3a0176bb2bf/5c5a0d17eef1a12d338ba784/5c5f65ca652deabd42dc13c5/1549756236422/1.ace+of+wands.jpg?format=500w',
+    facing: 0,
   },
   {
     id:`2 of Fire`,
@@ -716,6 +785,7 @@ const deck= [
     The Fire suit represents the plane of Atziluth, the realm closest to the Source and to the Divine Presence. The Ace is the initial spark of divine energy, and the Deuce is that spark made manifest.
     This card is a depiction of the ideal Will “independent of any given object”.`,
     img:'https://static1.squarespace.com/static/590185441b10e3a0176bb2bf/5c5a0d17eef1a12d338ba784/5c5f65f5fa0d60425b9e1805/1549756236501/2.deuce+of+wands.jpg?format=500w',
+    facing: 0,
   },
   {
     id:`3 of Fire`,
@@ -727,6 +797,7 @@ const deck= [
     Astrologically, this card is attributed to the Sun in Aries. The sign of Aries represents the initial onrush of Fire energy, and the Sun is a strong, sustaining force for that energy.
     Furthermore, Virtue has an affinity with the 11th hexagram of the I Ching, T’ai, Peace.`,
     img:'https://static1.squarespace.com/static/590185441b10e3a0176bb2bf/5c5a0d17eef1a12d338ba784/5c5f661c53450a883a1b9aeb/1549756236823/3.three+of+wands.jpg?format=500w',
+    facing: 0,
   },
   {
     id:`4 of Fire`,
@@ -736,6 +807,7 @@ const deck= [
     The Fours represent the Rule of Law and staus quo. “There is no intention to increase the scope of the original Will, and this lack of intention bears in the seeds of disorder.” The progression of the cards is intended to be considered holistically, so that each card is seen in relation to all of the other cards. Although the Four represents a stability, the stability of the Four also implies the coming disorder of the Five.
     The astrological attribution is of Venus in Aries. The sign of Aries represents the initial onrush of Fire energy, while Venus is the gentle planet associated with Love and Feelings.`,
     img:'https://static1.squarespace.com/static/590185441b10e3a0176bb2bf/5c5a0d17eef1a12d338ba784/5c5f678c971a1829e8f32c09/1549756313507/4.four+of+wands.jpg?format=500w',
+    facing: 0,
   },
   {
     id:`5 of Fire`,
@@ -744,6 +816,7 @@ const deck= [
     The introduction of the Five shows the idea of motion coming to the aid of that of matter, indicating a disruption of the previously stable system. The Four is the crystallization of the Will, the Five sets it in motion.
     The astrological attribution is of Saturn in Leo. Leo symbolizes the element of Fire in its strongest and most balanced, and Saturn adds a heaviness and embitters it.`,
     img:'https://static1.squarespace.com/static/590185441b10e3a0176bb2bf/5c5a0d17eef1a12d338ba784/5c5f6646e4966be7f7583d51/1549756236520/5.five+of+wands.jpg?format=500w',
+    facing: 0,
   },
   {
     id:`6 of Fire`,
@@ -757,6 +830,7 @@ const deck= [
     The astrological attribution of this card is of Jupiter in Leo. The sign of Leo represents the element of Fire in its strongest and most balanced form. The planet Jupiter is associated with luck. Perhaps this indicates that any victory requires the heart of a lion... and a little dumb luck. 
     The two Trump cards, The Lovers, and The High Priestess strongly influence the Sixes. There is some resonance between this card and the Son of Wands.`,
     img:'https://static1.squarespace.com/static/590185441b10e3a0176bb2bf/5c5a0d17eef1a12d338ba784/5c5f666171c10be188eb85f0/1549756236657/6.six+of+wands.jpg?format=500w',
+    facing: 0,
   },
   {
     id:`7 of Fire`,
@@ -766,6 +840,7 @@ const deck= [
     The current of Energy has left the balance and equilibrium of the Six, leading to an unbalance so low on the Tree that it “implies a loss of confidence.” In desperation, the energy has become brutal to compensate for weakening strength. A “frantic struggle” to maintain victory is at hand.
     The Seven “represents the degeneration of the element. Its utmost weakness is exposed in every case.”`,
     img:'https://static1.squarespace.com/static/590185441b10e3a0176bb2bf/5c5a0d17eef1a12d338ba784/5c5f667c4192028682d97743/1549756236669/7.seven+of+wands.jpg?format=500w',
+    facing: 0,
   },
   {
     id:`8 of Fire`,
@@ -774,6 +849,7 @@ const deck= [
     The astrological attribution is of Mercury in Sagittarius. Sagittarius refers to the exalted, ethereal qualities of Fire, and its sublime forms, such as light, the phenomenon of the rainbow, and of electricity. Hod is also attributed to the planet Mercury, giving this card a double attribution to the planet of speech, thought, and communication.
     This card represents high velocity energy, “such as furnishes the master-key to modern mathematical physics”.`,
     img:'https://static1.squarespace.com/static/590185441b10e3a0176bb2bf/5c5a0d17eef1a12d338ba784/5c5f66c38165f527b7724707/1549756236783/8.eight+of+wands.jpg?format=500w',
+    facing: 0,
   },
   {
     id:`9 of Fire`,
@@ -783,6 +859,7 @@ const deck= [
     Back on the middle pillar, the current of energy is again in balance and is now fully developed. Crowley says the Nine can be considered as the best that can be obtained. 
     Astrologically, this card is governed by the Moon in Sagittarius. Sagittarius refers to the exalted, ethereal qualities of Fire, and its sublime forms, such as light, the phenomenon of the rainbow, and of electricity. This card, with its double influence of the Moon, represents changing energy, the blinking of matter (is/is not). Constantly, we are reminded that change is stability.`,
     img:'https://static1.squarespace.com/static/590185441b10e3a0176bb2bf/5c5a0d17eef1a12d338ba784/5c5f66e46e9a7f5815fab90d/1549756236728/9.nine+of+wands.jpg?format=500w',
+    facing: 0,
   },
   {
     id:`10 of Fire`,
@@ -792,6 +869,7 @@ const deck= [
      This card is Fire at its most destructive, and it is ruled by Saturn in Sagittarius. Although Sagittarius refers to the exalted, ethereal qualities of Fire, and its sublime forms, such as light, the phenomenon of the rainbow, and of electricity, Saturn has a heavy, dulling effect. The Energy is detached from its spiritual sources, and it lacks the nobility, the authority, and the intelligence of the previous cards. Separated from the rest of the Tree, The Force has become blind, stupid, and cruel.
     “It is a Will which has not understood anything beyond its dull purpose, its 'lust of result’, and will devour itself in the conflagrations it has evoked.”`,
     img:'https://static1.squarespace.com/static/590185441b10e3a0176bb2bf/5c5a0d17eef1a12d338ba784/5c5f670beb39311832f16ccc/1549756236782/10.ten+of+wands.jpg?format=500w',
+    facing: 0,
   },
 ] 
 
