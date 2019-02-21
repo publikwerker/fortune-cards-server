@@ -15,7 +15,9 @@ const ReadingSchema = mongoose.Schema({
     facing: {type: Number,},
   }],
   userId: {
-    type: mongoose.Schema.Types.ObjectId, ref: 'User', required: true
+    type: mongoose.Schema.Types.ObjectId, 
+    ref: 'User', 
+    required: true
   },
 });
 
@@ -44,19 +46,15 @@ const UserSchema = mongoose.Schema({
   history: [ReadingSchema],
 });
 
-// ReadingSchema.methods.serialize = function() {
-//   return {
-//     userId: this.userId || ''
-//   };
-// };
-
-// ReadingSchema.methods.validateUserId = function(userId) {
-//   return bcrype.compare(userId, this.userId);
-// };
-
 UserSchema.methods.serialize = function() {
   return {
     username: this.username || ''
+  };
+};
+
+UserSchema.methods.xtractHistory = function () {
+  return {
+    history: this.history || ''
   };
 };
 

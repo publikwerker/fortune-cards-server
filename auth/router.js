@@ -38,11 +38,38 @@ router.post('/refresh', jwtAuth, (req, res) => {
   res.json({authToken});
 });
 
+//GET history
+router.get('/', jwtAuth, (req, res) => {
+  const username = req.query.id;
+  console.log(username);
+  const requiredFields = [ 'username' ];
+  const missingFields = requiredFields.find(field => !(field in req.body));
+
+  if (missingFields){
+    return res.status(422).json({
+      code: 422,
+      reason: 'ValidationError',
+      message: 'Missing field',
+      location: missingFields,
+    });
+  }
+  
+  return User.findOne({username: username})
+  .then(user => {
+    return res.status(201).json(user.xtractHistory());
+  })
+  .catch(err => {
+    console.log(err);
+    res.status(500).json({code:500, message:"couldn't GET history"})
+  });
+});
+
+
 //PUT new reading to history
 router.put('/', jwtAuth, (req, res) => {
-  const { id }= req.params;
+  const username = req.query.id;
   //ensure there is a userId
-  const requiredFields = [ 'userId' ];
+  const requiredFields = [ 'username' ];
   const missingFields = requiredFields.find(field => !(field in req.body));
 
   if (missingFields){
@@ -70,7 +97,6 @@ router.put('/', jwtAuth, (req, res) => {
   }
 
   //ensure there are cards in spread
-
   if (!req.body.spread || req.body.spread.length<1){
     return res.status(422).json({
       code: 422,
@@ -92,29 +118,19 @@ router.put('/', jwtAuth, (req, res) => {
 
   console.log(toUpdate);
   User.findOne({id: id})
-    .then(user => {if (!user.history){
-      console.log("doesn't exist");
-      return User.update({id: id}, {
-        $set: { history: [toUpdate]}
-    }, {new: true})
-  } else {
-    console.log('does exist');
-    return User.updateOne({id: id}, {
-      $push:{history: toUpdate},
-    }, {new: true},);
-  };
-  return 
-  })
-  .then(result => {
-    if (result) {
-      res.json(result);
-    // } else {
-    //   next();
-    }
-  })
-//   .catch(err => {
-//     next(err);
-//   });
+    .then(user => {
+      return User.updateOne({id: id}, 
+        {$push:{history: toUpdate}}, 
+        {new: true}
+      );
+    })
+    .then(user => {
+      return res.status(201).json(user.serialize());
+    })
+    .catch(err => {
+      console.log(err);
+      res.status(500).json({message: 'Internal server error'})
+    });
 });
 
 module.exports={router};
