@@ -117,15 +117,15 @@ router.put('/', jwtAuth, (req, res) => {
   });
 
   console.log(toUpdate);
-  User.findOne({id: id})
+  User.findOne({username: username})
     .then(user => {
-      return User.updateOne({id: id}, 
+      return User.updateOne({username: username}, 
         {$push:{history: toUpdate}}, 
         {new: true}
       );
     })
     .then(user => {
-      return res.status(201).json(user.serialize());
+      return res.status(201).json(user);
     })
     .catch(err => {
       console.log(err);
