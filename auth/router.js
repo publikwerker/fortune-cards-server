@@ -69,7 +69,7 @@ router.get('/', jwtAuth, (req, res) => {
 router.put('/', jwtAuth, (req, res) => {
   const username = req.query.id;
   //ensure there is a userId
-  const requiredFields = [ 'username' ];
+  const requiredFields = [ 'username', 'cardsDealt' ];
   const missingFields = requiredFields.find(field => !(field in req.body));
 
   if (missingFields){
@@ -80,7 +80,7 @@ router.put('/', jwtAuth, (req, res) => {
       location: missingFields,
     });
   }
-
+  
   //ensure comments and query are string
   const stringFields = [ 'comments', 'query' ];
   console.log(typeof(req.body.comments));
@@ -96,19 +96,19 @@ router.put('/', jwtAuth, (req, res) => {
     });
   }
 
-  //ensure there are cards in spread
-  if (!req.body.spread || req.body.spread.length<1){
+  //ensure there are cards in cardsDealt
+  if (!req.body.cardsDealt || req.body.cardsDealt.length<1){
     return res.status(422).json({
       code: 422,
       reason: 'ValidationError',
-      message: 'No cards in spread',
-      location: req.body.spread,
+      message: 'No cards in cardsDealt',
+      location: req.body.cardsDealt,
     });
 
   }
 
   const toUpdate = {};
-  const updateableFields = [ 'comments', 'query', 'spread', 'userId', ];
+  const updateableFields = [ 'comments', 'query', 'cardsDealt', 'userId', ];
 
   updateableFields.forEach(field => {
     if (field in req.body){

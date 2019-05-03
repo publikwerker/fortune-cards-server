@@ -11,7 +11,7 @@ const ReadingSchema = mongoose.Schema({
     id: {type: String,},
     name: {type: String,},
     desc: {type: String,}, 
-    image: {type: String,},
+    img: {type: String,},
     facing: {type: Number,},
   }],
   userId: {
