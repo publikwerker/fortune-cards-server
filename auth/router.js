@@ -67,8 +67,9 @@ router.get('/', jwtAuth, (req, res) => {
 
 //PUT new reading to history
 router.put('/', jwtAuth, (req, res) => {
-  const username = req.query.id;
   //ensure there is a userId
+  console.log(req.body);
+  const userId = req.body.userId;
   const requiredFields = [ 'username', 'cardsDealt' ];
   const missingFields = requiredFields.find(field => !(field in req.body));
 
@@ -81,6 +82,8 @@ router.put('/', jwtAuth, (req, res) => {
     });
   }
   
+  const username = req.body.username;
+
   //ensure comments and query are string
   const stringFields = [ 'comments', 'query' ];
   console.log(typeof(req.body.comments));
@@ -104,21 +107,16 @@ router.put('/', jwtAuth, (req, res) => {
       message: 'No cards in cardsDealt',
       location: req.body.cardsDealt,
     });
-
   }
 
-  const toUpdate = {};
-  const updateableFields = [ 'comments', 'query', 'cardsDealt', 'userId', ];
-
-  updateableFields.forEach(field => {
-    if (field in req.body){
-      toUpdate[field] = req.body[field];
-    }
-  });
+  const toUpdate = {
+    ...req.body, 
+    userId
+  };
 
   console.log(toUpdate);
   User.findOne({username: username})
-    .then(user => {
+    .then(() => {
       return User.updateOne({username: username}, 
         {$push:{history: toUpdate}}, 
         {new: true}

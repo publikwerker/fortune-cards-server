@@ -7,7 +7,7 @@ mongoose.Promise = global.Promise;
 const ReadingSchema = mongoose.Schema({
   comments: {type: String,},
   query: {type: String,},
-  spread: [{
+  cardsDealt: [{
     id: {type: String,},
     name: {type: String,},
     desc: {type: String,}, 
