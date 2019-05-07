@@ -3,11 +3,9 @@ const express = require('express');
 const passport = require('passport');
 const bodyParser = require('body-parser');
 const jwt = require('jsonwebtoken');
-
 const config = require('../config');
 const router = express.Router();
 const {User} = require('../users/models.js');
-
 const createAuthToken = function(user) {
   return jwt.sign({user},
     config.JWT_SECRET, 
@@ -16,18 +14,20 @@ const createAuthToken = function(user) {
       expiresIn: config.JWT_EXPIRY,
       algorithm: 'HS256'
     }
-  );
+  )
 };
 
 const localAuth = passport.authenticate('local', {session: false});
 
 //A new body object containing the parsed data is populated on the request object after middleware
 router.use(bodyParser.json());
+router.use(bodyParser.urlencoded({ extended: true }));
 
 //POST request to login
 router.post('/login', localAuth, (req, res) => {
   const authToken = createAuthToken(req.user.serialize());
-  res.json({authToken});
+  console.log(authToken);
+  return res.json({authToken})
 });
 
 const jwtAuth = passport.authenticate('jwt', {session: false});
@@ -35,7 +35,7 @@ const jwtAuth = passport.authenticate('jwt', {session: false});
 //POST request to refresh token
 router.post('/refresh', jwtAuth, (req, res) => {
   const authToken = createAuthToken(req.user);
-  res.json({authToken});
+  return res.json({authToken})
 });
 
 //GET history
@@ -58,18 +58,15 @@ router.get('/', jwtAuth, (req, res) => {
   .then(user => {
     return res.status(201).json(user.xtractHistory());
   })
-  .catch(err => {
-    console.log(err);
-    res.status(500).json({code:500, message:"couldn't GET history"})
-  });
 });
 
 
 //PUT new reading to history
 router.put('/', jwtAuth, (req, res) => {
   //ensure there is a userId
+  console.log(req);
   console.log(req.body);
-  const userId = req.body.userId;
+  const userId = req.user.userId;
   const requiredFields = [ 'username', 'cardsDealt' ];
   const missingFields = requiredFields.find(field => !(field in req.body));
 
