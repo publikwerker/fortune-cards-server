@@ -15,6 +15,10 @@ mongoose.Promise = global.Promise;
 const app = express();
 app.use(morgan('common'));
 
+app.use(function (req, res, next) {
+  res.setHeader('Access-Control-Allow-Origin', '*');
+  next();
+});
 // app.use(
 //   cors({
 //     origin:CLIENT_ORIGIN
