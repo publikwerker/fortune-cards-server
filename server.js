@@ -15,16 +15,17 @@ mongoose.Promise = global.Promise;
 const app = express();
 app.use(morgan('common'));
 
-app.use(function (req, res, next) {
-  res.setHeader('Access-Control-Allow-Origin', '*');
-  next();
+app.use(
+  cors({
+    origin:CLIENT_ORIGIN
+  })
+);
+app.options('*', cors());
+app.all('/', function(req, res, next) {
+  res.header("Access-Control-Allow-Origin", "*");
+  res.header("Access-Control-Allow-Headers", ["Content-Type", "Authorization"]);
+  next()
 });
-// app.use(
-//   cors({
-//     origin:CLIENT_ORIGIN
-//   })
-// );
-
 passport.use(localStrategy);
 passport.use(jwtStrategy);
 
