@@ -23,7 +23,7 @@ describe('Reality Check', () => {
 describe('Basic express setup', () => {
   it('GET request "/" should return deck', () => {
     return chai.request(app)
-    .get('/api/tarotDeck')
+    .get('/tarotDeck')
     .then( (res) => {
       expect(res).to.exist;
     });

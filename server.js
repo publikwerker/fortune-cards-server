@@ -24,19 +24,19 @@ app.use(
 passport.use(localStrategy);
 passport.use(jwtStrategy);
 
-app.use('/api/users/', usersRouter);
-app.use('/api/auth/', authRouter);
+app.use('/users/', usersRouter);
+app.use('/auth/', authRouter);
 
 const jwtAuth = passport.authenticate('jwt', {session: false});
 
-app.get('/api/protected', jwtAuth, (req, res) => {
+app.get('/protected', jwtAuth, (req, res) => {
   return res.json({
     data: 'rosebud'
   });
 });
 
 
-app.get('/api/tarotDeck', (req ,res) => {
+app.get('/tarotDeck', (req ,res) => {
   console.log(deck);
   res.json(deck);
 });
