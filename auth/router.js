@@ -63,10 +63,8 @@ router.get('/', jwtAuth, (req, res) => {
 
 //PUT new reading to history
 router.put('/', jwtAuth, (req, res) => {
-  //ensure there is a userId
   console.log(req);
   console.log(req.body);
-  const userId = req.user.userId;
   const requiredFields = [ 'username', 'cardsDealt' ];
   const missingFields = requiredFields.find(field => !(field in req.body));
 
@@ -107,8 +105,7 @@ router.put('/', jwtAuth, (req, res) => {
   }
 
   const toUpdate = {
-    ...req.body, 
-    userId
+    ...req.body
   };
 
   console.log(toUpdate);
