@@ -20,12 +20,12 @@ app.use(
     origin:CLIENT_ORIGIN
   })
 );
-app.options('*', cors());
-app.all('/', function(req, res, next) {
-  res.setHeader("Access-Control-Allow-Origin", "*");
-  res.setHeader("Access-Control-Allow-Headers", ["Content-Type", "Authorization"]);
-  next()
-});
+// app.options('*', cors());
+// app.all('/', function(req, res, next) {
+//   res.setHeader("Access-Control-Allow-Origin", "*");
+//   res.setHeader("Access-Control-Allow-Headers", ["Content-Type", "Authorization"]);
+//   next()
+// });
 passport.use(localStrategy);
 passport.use(jwtStrategy);
 
@@ -33,13 +33,6 @@ app.use('/users/', usersRouter);
 app.use('/auth/', authRouter);
 
 const jwtAuth = passport.authenticate('jwt', {session: false});
-
-app.get('/protected', jwtAuth, (req, res) => {
-  return res.json({
-    data: 'rosebud'
-  });
-});
-
 
 app.get('/tarotDeck', (req ,res) => {
   console.log(deck);
