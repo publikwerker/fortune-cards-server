@@ -2,6 +2,7 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const { User } = require('./models');
+const chalk = require('chalk');
 
 const router = express.Router();
 const jsonParser = bodyParser.json();
@@ -9,6 +10,7 @@ const jsonParser = bodyParser.json();
 //POST to register new user
 router.post('/', jsonParser, (req, res) => {
   const requiredFields = ['username', 'password'];
+  console.log(chalk.blue(`req.body is ${req.body}`));
   const missingField = requiredFields.find(field => !(field in req.body));
 
   if (missingField) {
