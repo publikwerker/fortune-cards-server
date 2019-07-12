@@ -64,10 +64,6 @@ UserSchema.methods.validatePassword = function(password) {
   return bcrypt.compare(password, this.password);
 };
 
-UserSchema.methods.getHistory = function() {
-  return this.history;
-};
-
 UserSchema.statics.hashPassword = function(password){
   return bcrypt.hash(password, 10);
 };
