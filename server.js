@@ -5,6 +5,8 @@ const mongoose = require('mongoose');
 const morgan = require('morgan');
 const passport = require('passport');
 const cors = require('cors');
+const chalk = require('chalk');
+
 const { CLIENT_ORIGIN, PORT , DATABASE_URL } = require('./config');
 const {deck} = require('./tarotDeck.js');
 const { router: usersRouter } = require('./users');
@@ -14,18 +16,12 @@ mongoose.Promise = global.Promise;
 
 const app = express();
 app.use(morgan('common'));
-
 app.use(
   cors({
     origin:CLIENT_ORIGIN
   })
 );
-// app.options('*', cors());
-// app.all('/', function(req, res, next) {
-//   res.setHeader("Access-Control-Allow-Origin", "*");
-//   res.setHeader("Access-Control-Allow-Headers", ["Content-Type", "Authorization"]);
-//   next()
-// });
+
 passport.use(localStrategy);
 passport.use(jwtStrategy);
 
@@ -35,7 +31,7 @@ app.use('/auth/', authRouter);
 const jwtAuth = passport.authenticate('jwt', {session: false});
 
 app.get('/tarotDeck', (req ,res) => {
-  console.log(deck);
+  console.log(chalk.blue.inverse.bold(`Deck Loaded`));
   res.json(deck);
 });
 
@@ -53,10 +49,11 @@ function runServer() {
       }
       server = app
         .listen(PORT, () => {
-          console.log(`Your app is listening on port ${PORT}`);
+          console.log(chalk.green.inverse.bold(`Your app is listening on port ${PORT}`));
           resolve();
         })
         .on('error', err => {
+          console.log(chalk.red.inverse(`Error: ${err}`));
           mongoose.disconnect();
           reject(err);
         });
@@ -67,9 +64,10 @@ function runServer() {
 function closeServer() {
   return mongoose.disconnect().then(() => {
     return new Promise((resolve, reject) => {
-      console.log('Closing server');
+      console.log(chalk.green.inverse.bold('Closing server'));
       server.close(err => {
         if (err) {
+          console.log(chalk.red.inverse(`Error: ${err}`));
           return reject(err);
         }
         resolve();
