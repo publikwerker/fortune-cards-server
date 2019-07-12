@@ -26,7 +26,7 @@ router.use(bodyParser.urlencoded({ extended: true }));
 //POST request to login
 router.post('/login', localAuth, (req, res) => {
   const authToken = createAuthToken(req.user.serialize());
-  console.log(authToken);
+  console.log(`AuthToken is ${authToken}`);
   return res.json({authToken})
 });
 
@@ -41,7 +41,7 @@ router.post('/refresh', jwtAuth, (req, res) => {
 //GET history
 router.get('/', jwtAuth, (req, res) => {
   const username = req.query.id;
-  console.log(username);
+  console.log(`Getting history for ${username}`);
   const requiredFields = [ 'username' ];
   const missingFields = requiredFields.find(field => !(field in req.body));
 

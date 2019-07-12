@@ -5,20 +5,21 @@ const mongoose = require('mongoose');
 mongoose.Promise = global.Promise;
 
 const ReadingSchema = mongoose.Schema({
-  comments: {type: String,},
-  query: {type: String,},
-  cardsDealt: [{
-    id: {type: String,},
-    name: {type: String,},
-    desc: {type: String,}, 
-    img: {type: String,},
-    facing: {type: Number,},
-  }],
   userId: {
     type: mongoose.Schema.Types.ObjectId, 
     ref: 'User', 
     required: true
   },
+  query: {
+    type: String,
+  },
+  cardsDealt:{
+    type: Array,
+    required: true,
+  },
+  comments: {
+    type: String,
+  }, 
 });
 
 //Add `createdAt` and `updatedAt` fields
@@ -38,10 +39,15 @@ const UserSchema = mongoose.Schema({
     type: String,
     required: true,
     unique: true,
+    trim: true,
+    minlength: 1,
   },
   password: {
     type: String,
     required: true,
+    trim: true,
+    minlength: 8,
+    maxlength: 72
   },
   history: [ReadingSchema],
 });
