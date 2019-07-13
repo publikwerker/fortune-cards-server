@@ -9,7 +9,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/thinkful-ei27/jason-capstone-server.git"
+    "url": "git+https://github.com/thinkful-ei27/jason-capstone-server.git"
   },
   "author": "publikwerker",
   "license": "ISC",
@@ -22,7 +22,6 @@
     "dotenv": "^6.2.0",
     "express": "^4.16.4",
     "jsonwebtoken": "^8.4.0",
-    "mocha": "^5.2.0",
     "mongoose": "^5.4.10",
     "morgan": "^1.9.1",
     "passport": "^0.4.0",
@@ -32,6 +31,13 @@
   },
   "devDependencies": {
     "chai": "*",
-    "mocha": "*"
+    "mocha": "^5.2.0"
+  },
+  "bugs": {
+    "url": "https://github.com/thinkful-ei27/jason-capstone-server/issues"
+  },
+  "homepage": "https://github.com/thinkful-ei27/jason-capstone-server#readme",
+  "directories": {
+    "test": "test"
   }
 }
