@@ -13,6 +13,7 @@ router.post('/', jsonParser, (req, res) => {
   console.log(chalk.blue(`req.body is ${req.body}`));
   const missingField = requiredFields.find(field => !(field in req.body));
 
+  // if there is no username or password
   if (missingField) {
     return res.status(422).json({
       code: 422,
@@ -27,6 +28,7 @@ router.post('/', jsonParser, (req, res) => {
     field => field in req.body && typeof req.body[field] !== 'string'
   );
 
+  // if the username or password are not strings
   if (nonStringField){
     return res.status(422).json({
       code: 422,
@@ -41,6 +43,8 @@ router.post('/', jsonParser, (req, res) => {
     field => req.body[field].trim() !== req.body[field]
   );
 
+  // if username or password starts
+  // or ends with whitespace
   if (nonTrimmedField) {
     return res.status(422).json({
       code: 422,
@@ -52,7 +56,8 @@ router.post('/', jsonParser, (req, res) => {
 
   const sizedFields = {
     username: {
-      min: 1
+      min: 1,
+      max: 72
     },
     password: {
       min: 8,
@@ -60,12 +65,14 @@ router.post('/', jsonParser, (req, res) => {
     }
   };
 
+  // if username or password are shorter than minimum
   const tooSmallField = Object.keys(sizedFields).find(
     field =>
       'min' in sizedFields[field] &&
             req.body[field].trim().length < sizedFields[field].min
   );
 
+  // if username or password are longer than maximum
   const tooLargeField = Object.keys(sizedFields).find(
     field =>
       'max' in sizedFields[field] &&
@@ -85,7 +92,7 @@ router.post('/', jsonParser, (req, res) => {
     });
   }
 
-  let{username, password}=req.body;
+  let { username, password } = req.body;
 
   return User.find({username})
   .count()
@@ -110,7 +117,7 @@ router.post('/', jsonParser, (req, res) => {
     return res.status(201).json(user.serialize());
   })
   .catch(err => {
-    console.log(err);
+    console.log(chalk.red(`Error: ${err}`));
     if(err.reason === 'ValidationError'){
       return res.status(err.code).json(err);
     }

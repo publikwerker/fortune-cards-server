@@ -1,6 +1,7 @@
 'use strict';
 const bcrypt = require('bcryptjs');
 const mongoose = require('mongoose');
+const validator = require('validator');
 
 mongoose.Promise = global.Promise;
 
@@ -50,6 +51,14 @@ const UserSchema = mongoose.Schema({
     maxlength: 72
   },
   history: [ReadingSchema],
+  email: String,
+  trim: true,
+  unique: true,
+  validate(value) {
+    if (!validator.isEmail(value)) {
+      throw new Error('Email is invalid.');
+    }
+  }
 });
 
 UserSchema.methods.serialize = function() {
