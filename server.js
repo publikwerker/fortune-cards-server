@@ -28,8 +28,6 @@ passport.use(jwtStrategy);
 app.use('/users/', usersRouter);
 app.use('/auth/', authRouter);
 
-const jwtAuth = passport.authenticate('jwt', {session: false});
-
 app.get('/tarotDeck', (req ,res) => {
   console.log(chalk.blue.inverse.bold(`Deck Loaded`));
   res.json(deck);
