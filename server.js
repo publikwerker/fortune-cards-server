@@ -15,12 +15,9 @@ const { router: authRouter, localStrategy, jwtStrategy } = require('./auth');
 mongoose.Promise = global.Promise;
 
 const app = express();
+
 app.use(morgan('common'));
-app.use(
-  cors({
-    origin:CLIENT_ORIGIN
-  })
-);
+app.use(cors({origin:CLIENT_ORIGIN}));
 
 passport.use(localStrategy);
 passport.use(jwtStrategy);
