@@ -125,14 +125,4 @@ router.post('/', jsonParser, (req, res) => {
   });
 });
 
-//bounces back list of users FOR DEV
-router.get('/', async (req, res) => {
-  try {
-    const users = await User.find();
-    return res.json(users.map(user => user.serialize()));
-  } catch (err) {
-    res.status(500).json({message: 'Internal server error'});
-  }
-});
-
 module.exports = {router};
