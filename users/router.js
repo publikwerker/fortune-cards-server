@@ -9,8 +9,9 @@ const jsonParser = bodyParser.json();
 
 //POST to register new user
 router.post('/', jsonParser, (req, res) => {
+
+  // ensure username and password are provided
   const requiredFields = ['username', 'password'];
-  console.log(chalk.blue(`req.body is ${req.body}`));
   const missingField = requiredFields.find(field => !(field in req.body));
 
   // if there is no username or password
@@ -23,6 +24,7 @@ router.post('/', jsonParser, (req, res) => {
     });
   }
 
+  // ensure username and password are strings
   const stringFields = ['username', 'password'];
   const nonStringField = stringFields.find(
     field => field in req.body && typeof req.body[field] !== 'string'
@@ -38,13 +40,13 @@ router.post('/', jsonParser, (req, res) => {
     });
   }
 
+  // ensure there is no whitespace at start or end of strings
   const explicitlyTrimmedField = ['username', 'password'];
   const nonTrimmedField = explicitlyTrimmedField.find(
     field => req.body[field].trim() !== req.body[field]
   );
 
-  // if username or password starts
-  // or ends with whitespace
+  // if username or password starts or ends with whitespace
   if (nonTrimmedField) {
     return res.status(422).json({
       code: 422,
@@ -72,6 +74,16 @@ router.post('/', jsonParser, (req, res) => {
             req.body[field].trim().length < sizedFields[field].min
   );
 
+  if (tooSmallField){
+    return res.status(422).json({
+      code: 422,
+      reason: 'ValidationError',
+      message: `Must be at least ${sizedFields[tooSmallField]
+          .min} characters long`,
+      location: tooSmallField
+    })
+  }
+
   // if username or password are longer than maximum
   const tooLargeField = Object.keys(sizedFields).find(
     field =>
@@ -79,23 +91,21 @@ router.post('/', jsonParser, (req, res) => {
             req.body[field].trim().length > sizedFields[field].max
   );
 
-  if (tooLargeField || tooSmallField) {
+  if (tooLargeField) {
     return res.status(422).json({
       code: 422,
       reason: 'ValidationError',
-      message: tooSmallField
-      ? `Must be at least ${sizedFields[tooSmallField]
-        .min} characters long`
-      : `Must be at most ${sizedFields[tooLargeField]
+      message: `Must be at most ${sizedFields[tooLargeField]
         .max} characters long`,
-      location: tooSmallField || tooLargeField
+      location: tooLargeField
     });
   }
 
+  // if they passed validation, set values
   let { username, password } = req.body;
 
   return User.find({username})
-  .count()
+  .countDocuments()
   .then(count => {
     if (count > 0 ){
       return Promise.reject({
@@ -117,7 +127,7 @@ router.post('/', jsonParser, (req, res) => {
     return res.status(201).json(user.serialize());
   })
   .catch(err => {
-    console.log(chalk.red(`Error: ${err}`));
+    console.log(chalk.red(`Error: ${err.message}`));
     if(err.reason === 'ValidationError'){
       return res.status(err.code).json(err);
     }
