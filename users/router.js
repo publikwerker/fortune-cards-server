@@ -8,7 +8,7 @@ const router = express.Router();
 const jsonParser = bodyParser.json();
 
 //POST to register new user
-router.post('/', jsonParser, (req, res) => {
+router.post('/', jsonParser, async (req, res) => {
 
   // ensure username and password are provided
   const requiredFields = ['username', 'password'];
@@ -96,7 +96,7 @@ router.post('/', jsonParser, (req, res) => {
       code: 422,
       reason: 'ValidationError',
       message: `Must be at most ${sizedFields[tooLargeField]
-        .max} characters long`,
+        .max} character(s) long`,
       location: tooLargeField
     });
   }
@@ -104,35 +104,31 @@ router.post('/', jsonParser, (req, res) => {
   // if they passed validation, set values
   let { username, password } = req.body;
 
-  return User.find({username})
-  .countDocuments()
-  .then(count => {
-    if (count > 0 ){
-      return Promise.reject({
-        code: 422,
-        reason: 'ValidationError',
-        message: 'Username already taken',
-        location: 'username',
-      });
-    }
-    return User.hashPassword(password);
-  })
-  .then(hash => {
-    return User.create({
+  // determine if user exists
+  try {
+    await User.find({username})
+  } catch (err) {
+    return res.status(401).json({
+      code: 401,
+      reason: 'ValidationError',
+      message: `username already exists`
+    })
+  }
+
+  try { 
+    let hash = await User.hashPassword(password);
+    let user = await User.create({
       username,
       password: hash
     });
-  })
-  .then(user => {
     return res.status(201).json(user.serialize());
-  })
-  .catch(err => {
+  } catch (err) {
     console.log(chalk.red(`Error: ${err.message}`));
     if(err.reason === 'ValidationError'){
       return res.status(err.code).json(err);
     }
-    res.status(500).json({code:500, message:'Internal server error'});
-  });
+    res.status(500).json({code: 500, message: err.errmsg});
+  }
 });
 
 module.exports = {router};
