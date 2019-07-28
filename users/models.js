@@ -21,6 +21,8 @@ const ReadingSchema = mongoose.Schema({
   comments: {
     type: String,
   }, 
+}, {
+  timestamps: true
 });
 
 //Add `createdAt` and `updatedAt` fields
@@ -60,6 +62,8 @@ const UserSchema = mongoose.Schema({
       }
     }
   }
+}, {
+  timestamps: true
 });
 
 UserSchema.methods.serialize = function() {
