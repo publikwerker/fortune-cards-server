@@ -25,8 +25,8 @@ const ReadingSchema = mongoose.Schema({
   timestamps: true
 });
 
-//Add `createdAt` and `updatedAt` fields
-ReadingSchema.set('timestamps', true);
+// //Add `createdAt` and `updatedAt` fields
+// ReadingSchema.set('timestamps', true);
 
 // Transform output during `res.json(data)`, `console.log(data)` etc.
 ReadingSchema.set('toJSON', {

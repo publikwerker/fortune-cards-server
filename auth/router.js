@@ -61,8 +61,8 @@ router.get('/', jwtAuth, (req, res) => {
 });
 
 
-//PUT new reading to history
-router.put('/', jwtAuth, (req, res) => {
+//POST new reading to history
+router.post('/reading', jwtAuth, (req, res) => {
   console.log(req);
   console.log(req.body);
   const requiredFields = [ 'username', 'cardsDealt' ];
