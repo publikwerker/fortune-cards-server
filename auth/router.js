@@ -62,10 +62,9 @@ router.get('/', jwtAuth, (req, res) => {
 
 
 //POST new reading to history
-router.post('/reading', jwtAuth, (req, res) => {
-  console.log(req.body);
-  const userId = req.user._id;
-  const { cardsDealt, comments, query } = req.body;
+router.post('/reading', jwtAuth, async (req, res) => {
+  console.log(req.user);
+  const userId = req.user.userId;
   const requiredFields = [ 'cardsDealt' ];
   const missingFields = requiredFields.find(field => !(field in req.body));
 
@@ -103,28 +102,25 @@ router.post('/reading', jwtAuth, (req, res) => {
     });
   }
 
-  const toUpdate = {
+  const toUpdate = new Reading({
     userId,
-    query,
-    cardsDealt,
-    comments
-  };
+    ...req.body
+  });
+  try {
+    const user = await User.findOne({_id: userId})
+    if (!user) {
+      return res.status(404).send()
+    }
 
-  console.log(`toUpdate is ${toUpdate}`);
-  User.findOne({_id: userId})
-    .then(() => {
-      return User.updateOne({_id: userId}, 
-        {$push:{history: toUpdate}}, 
-        {new: true}
-      );
-    })
-    .then(user => {
-      return res.status(201).json(user);
-    })
-    .catch(err => {
-      console.log(err);
-      res.status(500).json({message: 'Internal server error'})
-    });
+    await User.updateOne({_id: userId}, 
+      {$push:{history: toUpdate}}, 
+      {new: true}
+      )
+    return res.status(201).json(user.history);
+  } catch (err) {
+    console.log(err);
+    res.status(500).json({message: 'Internal server error'})
+  }
 });
 
 module.exports={router};
