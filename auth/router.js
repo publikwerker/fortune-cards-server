@@ -61,6 +61,40 @@ router.get('/', jwtAuth, (req, res) => {
 });
 
 
+// does not work
+//PATCH existing reading
+router.patch('/reading/:readingId', jwtAuth, async (req, res) => {
+  const { readingId } = req.params;
+  const updates = Object.keys(req.body);
+  console.log(`updates is ${updates}`);
+  const allowedUpdates = [ 'comments'];
+  const isValidOperation = updates.every((update) => allowedUpdates.includes(update));
+  if (!isValidOperation) {
+    return res.status(400).send(`Error: non-updateable field`);
+  };
+  try {
+    const user = await User.findOne({_id: req.user.userId});
+    console.log(user)
+    if (!user){
+      console.log(`there is no user`)
+      return res.status(404).send('Error: User not found');
+    }
+    const reading = user.history.filter((entry) => {
+      return entry._id == readingId
+    });
+    console.log(`reading is ${reading}`)
+    if (!reading) {
+      return res.status(404).send(`Cannot find reading.`);
+    }
+    updates.forEach((update) => reading[update] = req.body[update]);
+    await reading.save();
+    res.status(202).send('Reading updated');
+  } catch (err) {
+    res.status(400).send(err);
+  };
+});
+
+
 //POST new reading to history
 router.post('/reading', jwtAuth, async (req, res) => {
   console.log(req.user);
