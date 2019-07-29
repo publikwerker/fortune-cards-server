@@ -5,7 +5,7 @@ const bodyParser = require('body-parser');
 const jwt = require('jsonwebtoken');
 const config = require('../config');
 const router = express.Router();
-const {User} = require('../users/models.js');
+const {User, Reading} = require('../users/models.js');
 const createAuthToken = function(user) {
   return jwt.sign({user},
     config.JWT_SECRET, 
@@ -63,9 +63,10 @@ router.get('/', jwtAuth, (req, res) => {
 
 //POST new reading to history
 router.post('/reading', jwtAuth, (req, res) => {
-  console.log(req);
   console.log(req.body);
-  const requiredFields = [ 'username', 'cardsDealt' ];
+  const userId = req.user._id;
+  const { cardsDealt, comments, query } = req.body;
+  const requiredFields = [ 'cardsDealt' ];
   const missingFields = requiredFields.find(field => !(field in req.body));
 
   if (missingFields){
@@ -76,8 +77,6 @@ router.post('/reading', jwtAuth, (req, res) => {
       location: missingFields,
     });
   }
-  
-  const username = req.body.username;
 
   //ensure comments and query are string
   const stringFields = [ 'comments', 'query' ];
@@ -105,13 +104,16 @@ router.post('/reading', jwtAuth, (req, res) => {
   }
 
   const toUpdate = {
-    ...req.body
+    userId,
+    query,
+    cardsDealt,
+    comments
   };
 
-  console.log(toUpdate);
-  User.findOne({username: username})
+  console.log(`toUpdate is ${toUpdate}`);
+  User.findOne({_id: userId})
     .then(() => {
-      return User.updateOne({username: username}, 
+      return User.updateOne({_id: userId}, 
         {$push:{history: toUpdate}}, 
         {new: true}
       );
