@@ -63,7 +63,7 @@ router.get('/', jwtAuth, (req, res) => {
 
 // does not work
 //PATCH existing reading
-router.patch('/reading/:readingId', jwtAuth, async (req, res) => {
+router.put('/reading/:readingId', jwtAuth, async (req, res) => {
   const { readingId } = req.params;
   const updates = Object.keys(req.body);
   console.log(`updates is ${updates}`);

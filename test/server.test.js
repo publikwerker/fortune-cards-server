@@ -1,32 +1,24 @@
-'use strict';
+/**
+ * @jest-environment node
+ */
 
-const chai = require('chai');
-const chaiHttp = require('chai-http');
+const request = require('supertest');
+const { app } = require('../server');
+const { User } = require('../users/models');
 
-const expect = chai.expect;
+const userOne = {
+  email: 'bigjilm',
+  password: 'P@55word'
+}
 
-chai.use(chaiHttp);
+beforeEach(async () => {
+  await User.deleteMany();
+  await new User(userOne).save();
+})
 
-const {app} = require('../server');
-
-
-describe('Reality Check', () => {
-  it('true should be true', () => {
-    expect(true).to.be.true;
-  });
-
-  it('2 + 2 should equal 4', () => {
-    expect(2 + 2).to.equal(4);
-  });
-});
-
-describe('Basic express setup', () => {
-  it('GET request "/" should return deck', () => {
-    return chai.request(app)
-    .get('/tarotDeck')
-    .then( (res) => {
-      expect(res).to.exist;
-    });
-  });
-
-});
+test('Should sign up new user', async () => {
+  await request(app).post('/users').send({
+    username: 'billy',
+    password: 'P@55word'
+  }).expect(201)
+})
