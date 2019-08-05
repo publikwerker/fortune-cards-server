@@ -16,7 +16,6 @@
   "license": "ISC",
   "dependencies": {
     "bcryptjs": "^2.4.3",
-    "chai-http": "^4.2.1",
     "chalk": "^2.4.2",
     "cors": "^2.8.5",
     "dotenv": "^6.2.0",
@@ -33,8 +32,7 @@
     "validator": "^11.1.0"
   },
   "devDependencies": {
-    "chai": "^4.2.0",
-    "mocha": "^5.2.0"
+    "jest": "^24.8.0"
   },
   "bugs": {
     "url": "https://github.com/thinkful-ei27/jason-capstone-server/issues"
@@ -42,5 +40,8 @@
   "homepage": "https://github.com/thinkful-ei27/jason-capstone-server#readme",
   "directories": {
     "test": "test"
+  },
+  "jest": {
+    "testEnvironment": "node"
   }
 }

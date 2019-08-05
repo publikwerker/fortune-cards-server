@@ -7,7 +7,7 @@ const { app } = require('../server');
 const { User } = require('../users/models');
 
 const userOne = {
-  email: 'bigjilm',
+  username: 'bigjilm',
   password: 'P@55word'
 }
 
@@ -17,7 +17,7 @@ beforeEach(async () => {
 })
 
 test('Should sign up new user', async () => {
-  await request(app).post('/users').send({
+  await request(app).post('/users/').send({
     username: 'billy',
     password: 'P@55word'
   }).expect(201)
