@@ -120,7 +120,6 @@ router.post('/', jsonParser, async (req, res) => {
 
   try { 
     let hash = await User.hashPassword(password);
-    console.log(hash)
     let user = await User.create({
       username,
       password: hash
