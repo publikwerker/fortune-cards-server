@@ -63,6 +63,7 @@ const UserSchema = mongoose.Schema({
   timestamps: true
 });
 
+
 UserSchema.methods.serialize = function() {
   return {
     username: this.username || '',

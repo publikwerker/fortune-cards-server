@@ -7,8 +7,12 @@ const request = require('supertest');
 const app = require('../app');
 const { User } = require('../users/models');
 const { runServer, closeServer } = require('../server');
+const jwt = require('jsonwebtoken');
+const mongoose = require('mongoose');
 
+const userOneId = new mongoose.Types.ObjectId();
 const userOne = {
+  _id: userOneId,
   username: "bigjilm",
   password: "P@55word"
 }
