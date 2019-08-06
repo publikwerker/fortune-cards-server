@@ -122,8 +122,8 @@ router.post('/', jsonParser, async (req, res) => {
       username,
       password: hash
     });
-    
-    return res.status(201).json(user.serialize());
+    const token = await user.generateAuthToken();
+    return res.status(201).json({user: user.serialize(), token});
   } catch (err) {
     console.log(chalk.red(`Error: ${err.message}`));
     if(err.reason === 'ValidationError'){

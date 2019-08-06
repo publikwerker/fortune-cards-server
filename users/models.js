@@ -2,6 +2,8 @@
 const bcrypt = require('bcryptjs');
 const mongoose = require('mongoose');
 const validator = require('validator');
+const jwt = require('jsonwebtoken');
+const JWT_SECRET = process.env.JWT_SECRET;
 
 mongoose.Promise = global.Promise;
 
@@ -73,6 +75,15 @@ const UserSchema = mongoose.Schema({
 }, {
   timestamps: true
 });
+
+UserSchema.methods.generateAuthToken = async function () {
+  const user = this;
+  const token = jwt.sign({_id: user._id.toString()}, JWT_SECRET, { expiresIn: '1 day'});
+  user.tokens = user.tokens.concat({ token });
+  await user.save();
+
+  return token;
+};
 
 
 UserSchema.methods.serialize = function() {
