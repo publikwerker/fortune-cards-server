@@ -33,8 +33,21 @@ afterEach( async () => {
 })
 
 test('Should sign up new user', async () => {
-  const user = await request(app).post('/users').send(userTwo);
-  expect(user.body.username).toBe("billy")
+  const response = await request(app)
+    .post('/users')
+    .send(userTwo)
+    .expect(201);
+  console.log(response.body)
+  // Assert that the database was changed correctly
+  const user = await User.findById(response.body.userId)
+  expect(user).not.toBeNull();
+
+  // Assertions about response body
+  expect(response.body).toMatchObject({
+    username: 'billy',
+    history: [],
+    userId: response.body.userId
+  })
 })
 
 test('Should reject duplicate username', async () => {
