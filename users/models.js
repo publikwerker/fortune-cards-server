@@ -82,6 +82,7 @@ UserSchema.methods.validatePassword = function(password) {
 };
 
 UserSchema.statics.hashPassword = function(password){
+  console.log(`hashing!`)
   return bcrypt.hash(password, 10);
 };
 

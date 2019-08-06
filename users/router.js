@@ -9,7 +9,7 @@ const jsonParser = bodyParser.json();
 
 //POST to register new user
 router.post('/', jsonParser, async (req, res) => {
-
+  console.log(req.body);
   // ensure username and password are provided
   const requiredFields = ['username', 'password'];
   const missingField = requiredFields.find(field => !(field in req.body));
@@ -75,6 +75,7 @@ router.post('/', jsonParser, async (req, res) => {
   );
 
   if (tooSmallField){
+    console.log(tooSmallField);
     return res.status(422).json({
       code: 422,
       reason: 'ValidationError',
@@ -92,6 +93,7 @@ router.post('/', jsonParser, async (req, res) => {
   );
 
   if (tooLargeField) {
+    console.log(tooLargeField);
     return res.status(422).json({
       code: 422,
       reason: 'ValidationError',
@@ -103,7 +105,8 @@ router.post('/', jsonParser, async (req, res) => {
 
   // if they passed validation, set values
   let { username, password } = req.body;
-
+  console.log(username);
+  console.log(password);
   // determine if user exists
   try {
     await User.find({username})
@@ -117,6 +120,7 @@ router.post('/', jsonParser, async (req, res) => {
 
   try { 
     let hash = await User.hashPassword(password);
+    console.log(hash)
     let user = await User.create({
       username,
       password: hash

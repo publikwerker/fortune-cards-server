@@ -8,21 +8,17 @@ const app = require('../app');
 const { User } = require('../users/models');
 
 const userOne = {
-  username: 'bigjilm',
-  password: 'P@55word'
+  username: "bigjilm",
+  password: "P@55word"
 }
 
-// beforeEach(async (done) => {
+// beforeEach(async () => {
 //   await User.deleteMany({});
 //   await new User(userOne).save();
-//   done();
 // })
 
 test('Should sign up new user', async () => {
-  await request(app).post('/users/').send({
-    "username": "billy",
-    "password": "P@55word"
-  }).then((res) => expect(res.status).toBe(201))
+  const user = await request(app).post('/users').send(userOne).then((user) => expect(user).toContain(object))
 })
 
 test('Should get deck', async () => {
