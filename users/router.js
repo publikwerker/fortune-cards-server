@@ -105,8 +105,6 @@ router.post('/', jsonParser, async (req, res) => {
 
   // if they passed validation, set values
   let { username, password } = req.body;
-  console.log(username);
-  console.log(password);
   // determine if user exists
   try {
     await User.find({username})

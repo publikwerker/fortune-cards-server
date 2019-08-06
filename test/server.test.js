@@ -30,8 +30,11 @@ afterEach( async () => {
 
 test('Should sign up new user', async () => {
   const user = await request(app).post('/users').send(userTwo);
-  console.log(user);
   expect(user.body.username).toBe("billy")
+})
+
+test('Should reject duplicate username', async () => {
+  await request(app).post('/users').send(userOne).expect(500)
 })
 
 test('Should get deck', async () => {
