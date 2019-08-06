@@ -61,3 +61,12 @@ test('Should get deck', async () => {
 test('Should return 404 for nonpage', async () => {
   await request(app).get('/admin').send().expect(404)
 })
+
+test('Should login existing user', async () => {
+  await request(app)
+    .post('/auth/login')
+    .send({
+      "username": "bigjilm",
+      "password": "P@55word"
+    }).expect(200)
+})

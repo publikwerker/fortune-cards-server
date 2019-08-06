@@ -58,6 +58,17 @@ const UserSchema = mongoose.Schema({
         throw new Error('Email is invalid.')
       }
     }
+  },
+  tokens: [
+    {
+      token: {
+        type: String,
+        required: true
+      }
+    }
+  ],
+  avatar: {
+    type: Buffer
   }
 }, {
   timestamps: true

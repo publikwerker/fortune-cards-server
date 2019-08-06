@@ -122,6 +122,7 @@ router.post('/', jsonParser, async (req, res) => {
       username,
       password: hash
     });
+    
     return res.status(201).json(user.serialize());
   } catch (err) {
     console.log(chalk.red(`Error: ${err.message}`));
