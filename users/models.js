@@ -104,6 +104,18 @@ UserSchema.methods.validatePassword = function(password) {
   return bcrypt.compare(password, this.password);
 };
 
+// statics are accessible on the Models
+UserSchema.statics.findByCredentials = async (username, password) => {
+  const user = await User.findOne({username});
+  if(!user){
+    throw new Error('Unable to login');
+  }
+  const isMatch = await bcrypt.compare(password, user.password);
+  if (!isMatch) {
+    throw new Error('Unable to login');
+  }
+  return user;
+}
 UserSchema.statics.hashPassword = function(password){
   return bcrypt.hash(password, 10);
 };

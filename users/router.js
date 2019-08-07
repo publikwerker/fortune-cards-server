@@ -133,4 +133,15 @@ router.post('/', jsonParser, async (req, res) => {
   }
 });
 
+router.post('/login', jsonParser, async (req, res) => {
+  console.log(req.body);
+  try{
+    const user = await User.findByCredentials(req.body.username, req.body.password);
+    const token = await user.generateAuthToken();
+    res.send({ user, token });
+  } catch (err) {
+    res.status(400).send(err);
+  }
+})
+
 module.exports = {router};
