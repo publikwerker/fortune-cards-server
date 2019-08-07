@@ -137,8 +137,15 @@ router.post('/login', jsonParser, async (req, res) => {
   console.log(req.body);
   try{
     const user = await User.findByCredentials(req.body.username, req.body.password);
+    const { _id, username, history, tokens } = user;
+    const editedUser = {
+      _id,
+      username,
+      history,
+      tokens
+    }
     const token = await user.generateAuthToken();
-    res.send({ user, token });
+    res.send({ user: editedUser, token });
   } catch (err) {
     res.status(400).send(err);
   }
