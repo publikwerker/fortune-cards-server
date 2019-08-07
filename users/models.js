@@ -110,7 +110,9 @@ UserSchema.statics.findByCredentials = async (username, password) => {
   if(!user){
     throw new Error('Unable to login');
   }
+  console.log(user.password);
   const isMatch = await bcrypt.compare(password, user.password);
+  console.log(isMatch);
   if (!isMatch) {
     throw new Error('Unable to login');
   }
@@ -119,6 +121,15 @@ UserSchema.statics.findByCredentials = async (username, password) => {
 UserSchema.statics.hashPassword = function(password){
   return bcrypt.hash(password, 10);
 };
+
+// Hash plain text password before saving
+UserSchema.pre('save', async function (next) {
+  const user = this;
+  if (user.isModified('password')) {
+    user.password = await bcrypt.hash(user.password, 8);
+  }
+  next();
+})
 
 const User = mongoose.model('User', UserSchema);
 const Reading = mongoose.model('Reading', ReadingSchema);

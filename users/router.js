@@ -135,8 +135,11 @@ router.post('/', jsonParser, async (req, res) => {
 
 router.post('/login', jsonParser, async (req, res) => {
   console.log(req.body);
+  console.log(req.body.username);
+  console.log(req.body.password);
   try{
     const user = await User.findByCredentials(req.body.username, req.body.password);
+    console.log(user);
     const { _id, username, history, tokens } = user;
     const editedUser = {
       _id,

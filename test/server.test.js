@@ -39,14 +39,14 @@ test('Should sign up new user', async () => {
     .expect(201);
   console.log(response.body)
   // Assert that the database was changed correctly
-  const user = await User.findById(response.body.userId)
+  const user = await User.findById(response.body.user.userId)
   expect(user).not.toBeNull();
 
   // Assertions about response body
-  expect(response.body).toMatchObject({
+  expect(response.body.user).toMatchObject({
     username: 'billy',
     history: [],
-    userId: response.body.userId
+    userId: response.body.user.userId
   })
 })
 
@@ -63,10 +63,10 @@ test('Should return 404 for nonpage', async () => {
 })
 
 test('Should login existing user', async () => {
-  await request(app)
-    .post('/auth/login')
+  const response = await request(app)
+    .post('/users/login')
     .send({
-      "username": "bigjilm",
-      "password": "P@55word"
+      username: userOne.username,
+      password: userOne.password
     }).expect(200)
 })
