@@ -6,30 +6,16 @@ jest.setTimeout(20000);
 const request = require('supertest');
 const app = require('../app');
 const { User } = require('../users/models');
-const { runServer, closeServer } = require('../server');
-const jwt = require('jsonwebtoken');
-const mongoose = require('mongoose');
+const { closeServer } = require('../server');
+const { 
+  userOne,
+  userOneId,
+  userTwo,
+  userTwoId,
+  setUpDatabase
+} = require('./fixtures/db.js');
 
-const userOneId = new mongoose.Types.ObjectId();
-const userOne = {
-  _id: userOneId,
-  username: "bigjilm",
-  password: "P@55word",
-  tokens: [{
-    token: jwt.sign({_id: userOneId}, process.env.JWT_SECRET)
-  }]
-}
-
-const userTwo = {
-  username: "billy",
-  password: "P@55word"
-}
-
-beforeEach( async () => {
-  await runServer();
-  await User.deleteMany({});
-  await new User(userOne).save();
-})
+beforeEach( setUpDatabase );
 
 afterEach( async () => {
   await closeServer();
