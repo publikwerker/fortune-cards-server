@@ -11,7 +11,7 @@ const {
   userOne,
   userOneId,
   userTwo,
-  userTwoId,
+  userThree,
   setUpDatabase
 } = require('./fixtures/db.js');
 
@@ -60,7 +60,6 @@ test('Should login existing user', async () => {
     }).expect(200);
 
   const user = await User.findById(userOneId);
-  console.log(user);
   expect(user.tokens[1].token).toBe(response.body.token);
 })
 
@@ -68,8 +67,17 @@ test('Should not login nonexistent user', async () => {
   await request(app)
     .post('/users/login')
     .send({
-      username: "melbo",
-      password: "P@ssword123"
+      username: 'melbo',
+      password: 'P@ssword123'
     }).expect(400);
 })
 
+test('Should update valid user fields', async () => {
+  await request(app)
+    .patch('/users/me')
+    .set('Authorization', `Bearer ${userOne.tokens[0].token}`)
+    .send(userThree).expect(200)
+  const user = await User.findById(userOneId)
+  expect(user.username).toBe(userThree.username);
+  expect(user.email).toBe(userThree.email);
+})

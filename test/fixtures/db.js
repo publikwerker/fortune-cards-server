@@ -18,6 +18,12 @@ const userTwo = {
   password: "P@55word"
 }
 
+const userThree = {
+  username: 'ElGordo',
+  password: 'P@55word',
+  email:'el@gordo.com'
+}
+
 const setUpDatabase = async () => {
   await runServer();
   await User.deleteMany({});
@@ -28,5 +34,6 @@ module.exports = {
   userOne,
   userOneId,
   userTwo,
+  userThree,
   setUpDatabase
 }

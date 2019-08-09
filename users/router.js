@@ -1,17 +1,20 @@
 'use strict';
 const express = require('express');
+const passport = require('passport');
 const bodyParser = require('body-parser');
 const { User } = require('./models');
 const chalk = require('chalk');
+const auth = require('../middleware/auth');
 
 const router = express.Router();
+const jwtAuth = passport.authenticate('jwt', {session: false});
 
 //A new body object containing the parsed data is populated on the request object after middleware
 router.use(bodyParser.json());
+router.use(bodyParser.urlencoded({ extended: true }));
 
 //POST to register new user
 router.post('/', async (req, res) => {
-  console.log(req.body);
   // ensure username and password are provided
   const requiredFields = ['username', 'password'];
   const missingField = requiredFields.find(field => !(field in req.body));
@@ -139,11 +142,12 @@ router.post('/', async (req, res) => {
 router.post('/login', async (req, res) => {
   try{
     const user = await User.findByCredentials(req.body.username, req.body.password);
-    const { _id, username, history, tokens } = user;
+    const { _id, username, email, history, tokens } = user;
     const editedUser = {
       _id,
       username,
       history,
+      email,
       tokens
     }
     const token = await user.generateAuthToken();
@@ -153,6 +157,32 @@ router.post('/login', async (req, res) => {
   }
 })
 
-//router.patch('/users/me', )
+router.patch('/me', auth, async (req, res) => {
+  console.log(req.body)
+  console.log(req.user);
+  const updates = Object.keys(req.body);
+  console.log(updates);
+  const allowedUpdates = ['name', 'email', 'password' ]; 
+  const isValidOperation = updates.every((update) => allowedUpdates.includes(update));
+  if (!isValidOperation){
+    return res.status(400).send('Error: Invalid Updates')
+  }
+  try { 
+    console.log('trying')
+    updates.forEach((update) => req.user[update] = req.body[update]);
+    await req.user.save();
+    const { _id, username, email, history, tokens } = req.user;
+    const editedUser = {
+      _id,
+      username,
+      history,
+      email,
+      tokens
+    }
+    res.send({ user: editedUser});
+  } catch (err) {
+    res.status(400).send(err)
+  }
+})
 
 module.exports = {router};

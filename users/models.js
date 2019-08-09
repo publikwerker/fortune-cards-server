@@ -90,7 +90,10 @@ UserSchema.methods.serialize = function() {
   return {
     username: this.username || '',
     history: this.history || '',
-    userId: this._id || ''
+    userId: this._id || '',
+    email: this.email || '',
+    avatar: this.avatar || '',
+    tokens: this.tokens || []
   };
 };
 
