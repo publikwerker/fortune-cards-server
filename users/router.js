@@ -110,18 +110,8 @@ router.post('/', async (req, res) => {
 
   // if they passed validation, set values
   let { username, password } = req.body;
-  // determine if user exists
+  
   try {
-    await User.find({username})
-  } catch (err) {
-    return res.status(401).json({
-      code: 401,
-      reason: 'ValidationError',
-      message: `username already exists`
-    })
-  }
-
-  try { 
     let hash = await User.hashPassword(password);
     let user = await User.create({
       username,
@@ -140,6 +130,7 @@ router.post('/', async (req, res) => {
 
 // POST request to login
 router.post('/login', async (req, res) => {
+  console.log(req.body)
   try{
     const user = await User.findByCredentials(req.body.username, req.body.password);
     const { _id, username, email, history, tokens } = user;
