@@ -81,3 +81,11 @@ test('Should update valid user fields', async () => {
   expect(user.username).toBe(userThree.username);
   expect(user.email).toBe(userThree.email);
 })
+
+test('Should not update invalid fields', async () => {
+  request(app)
+    .patch('/users/me')
+    .set('Authorization', `Bearer ${userOne.tokens[0].token}`)
+    .send({_id: 15})
+    .expect(400)
+})
