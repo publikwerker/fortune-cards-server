@@ -100,3 +100,14 @@ test('Should delete account for authenticated user', async () => {
   const user = await User.findOne({_id: userOneId})
   expect(user).toBeNull();
 })
+
+test('Delete should reject unauthenticated user', async () => {
+  await request(app)
+    .delete('/users/me')
+    .send({
+      _id: userOneId
+    })
+    .expect(401)
+  const user = await User.findOne({_id: userOneId})
+  expect(user).not.toBeNull()
+})
