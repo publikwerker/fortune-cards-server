@@ -72,3 +72,4 @@ test('Should not login nonexistent user', async () => {
       password: "P@ssword123"
     }).expect(400);
 })
+

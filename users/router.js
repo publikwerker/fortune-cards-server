@@ -5,10 +5,12 @@ const { User } = require('./models');
 const chalk = require('chalk');
 
 const router = express.Router();
-const jsonParser = bodyParser.json();
+
+//A new body object containing the parsed data is populated on the request object after middleware
+router.use(bodyParser.json());
 
 //POST to register new user
-router.post('/', jsonParser, async (req, res) => {
+router.post('/', async (req, res) => {
   console.log(req.body);
   // ensure username and password are provided
   const requiredFields = ['username', 'password'];
@@ -133,7 +135,8 @@ router.post('/', jsonParser, async (req, res) => {
   }
 });
 
-router.post('/login', jsonParser, async (req, res) => {
+// POST request to login
+router.post('/login', async (req, res) => {
   try{
     const user = await User.findByCredentials(req.body.username, req.body.password);
     const { _id, username, history, tokens } = user;
@@ -149,5 +152,7 @@ router.post('/login', jsonParser, async (req, res) => {
     res.status(400).send(err);
   }
 })
+
+//router.patch('/users/me', )
 
 module.exports = {router};
