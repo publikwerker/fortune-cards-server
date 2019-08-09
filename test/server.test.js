@@ -82,10 +82,21 @@ test('Should update valid user fields', async () => {
   expect(user.email).toBe(userThree.email);
 })
 
-test('Should not update invalid fields', async () => {
+test('Should reject invalid fields', async () => {
   request(app)
     .patch('/users/me')
     .set('Authorization', `Bearer ${userOne.tokens[0].token}`)
     .send({_id: 15})
     .expect(400)
+})
+
+test('Should delete account for authenticated user', async () => {
+  await request(app)
+    .delete('/users/me')
+    .set('Authorization', `Bearer ${userOne.tokens[0].token}`)
+    .send()
+    .expect(200)
+
+  const user = await User.findOne({_id: userOneId})
+  expect(user).toBeNull();
 })

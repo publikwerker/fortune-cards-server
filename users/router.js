@@ -155,8 +155,9 @@ router.post('/login', async (req, res) => {
   } catch (err) {
     res.status(400).send(err);
   }
-})
+});
 
+//PATCH request to edit user
 router.patch('/me', auth, async (req, res) => {
   console.log(req.body)
   console.log(req.user);
@@ -180,6 +181,17 @@ router.patch('/me', auth, async (req, res) => {
       tokens
     }
     res.send({ user: editedUser});
+  } catch (err) {
+    res.status(400).send(err)
+  }
+});
+
+//DELETE request to delete user
+router.delete('/me', auth, async (req, res) => {
+  const user = req.user;
+  try {
+    await User.deleteOne({_id: user._id});
+    res.send();
   } catch (err) {
     res.status(400).send(err)
   }
