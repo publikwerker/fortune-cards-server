@@ -23,6 +23,9 @@ const ReadingSchema = mongoose.Schema({
   comments: {
     type: String,
   }, 
+  createdAt: {
+    type: String,
+  },
 }, {
   timestamps: true
 });

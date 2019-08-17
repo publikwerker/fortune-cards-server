@@ -3,6 +3,7 @@ const express = require('express');
 const passport = require('passport');
 const bodyParser = require('body-parser');
 const jwt = require('jsonwebtoken');
+const auth = require('../middleware/auth');
 const config = require('../config');
 const router = express.Router();
 const {User, Reading} = require('../users/models.js');
@@ -98,9 +99,9 @@ router.put('/reading/:readingId', jwtAuth, async (req, res) => {
 
 
 //POST new reading to history
-router.post('/reading', jwtAuth, async (req, res) => {
+router.put('/reading', auth, async (req, res) => {
   console.log(req.user);
-  const userId = req.user.userId;
+  const userId = req.user._id;
   const requiredFields = [ 'cardsDealt' ];
   const missingFields = requiredFields.find(field => !(field in req.body));
 
@@ -137,12 +138,13 @@ router.post('/reading', jwtAuth, async (req, res) => {
       location: req.body.cardsDealt,
     });
   }
-
+  console.log(userId);
   const toUpdate = new Reading({
     userId,
     ...req.body
   });
   try {
+    console.log(userId);
     const user = await User.findOne({_id: userId})
     if (!user) {
       return res.status(404).send()
