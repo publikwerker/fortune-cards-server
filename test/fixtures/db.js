@@ -13,6 +13,13 @@ const userOne = {
   }]
 }
 
+const readingOneId = new mongoose.Types.ObjectId();
+const readingOne = {
+  query: 'Is this all there is?',
+  cardsDealt: [{one: 1}, {two: 2}],
+  comments: 'I know Kung Fu.'
+}
+
 const userTwo = {
   username: "billy",
   password: "P@55word"
@@ -31,6 +38,8 @@ const setUpDatabase = async () => {
 }
 
 module.exports = {
+  readingOne,
+  readingOneId,
   userOne,
   userOneId,
   userTwo,

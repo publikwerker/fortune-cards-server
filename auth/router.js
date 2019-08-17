@@ -143,6 +143,7 @@ router.put('/reading', auth, async (req, res) => {
     userId,
     ...req.body
   });
+  console.log(toUpdate)
   try {
     console.log(userId);
     const user = await User.findOne({_id: userId})
@@ -150,11 +151,11 @@ router.put('/reading', auth, async (req, res) => {
       return res.status(404).send()
     }
 
-    await User.updateOne({_id: userId}, 
-      {$push:{history: toUpdate}}, 
-      {new: true}
-      )
-    return res.status(201).json(user.history);
+    const updated = await User.findOne(
+      {_id: userId});
+    updated.history.push(toUpdate);
+    await updated.save();
+    return res.status(201).json();
   } catch (err) {
     console.log(err);
     res.status(500).json({message: 'Internal server error'})
