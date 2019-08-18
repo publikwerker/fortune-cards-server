@@ -6,7 +6,7 @@
 const request = require('supertest');
 const app = require('../app');
 const { User } = require('../users/models');
-const { closeServer } = require('../server');
+const { runServer, closeServer } = require('../server');
 const { 
   userOne,
   userOneId,
@@ -15,13 +15,19 @@ const {
   setUpDatabase
 } = require('./fixtures/db.js');
 
-beforeEach( setUpDatabase );
+let server;
 
-afterEach( async () => {
+beforeAll( async () => {
+  await runServer(); 
+});
+
+beforeEach(setUpDatabase);
+
+afterAll( async () => {
   await closeServer();
 })
 
-test.skip('Should sign up new user', async () => {
+test('Should sign up new user', async () => {
   const response = await request(app)
     .post('/users')
     .send(userTwo)
@@ -39,19 +45,19 @@ test.skip('Should sign up new user', async () => {
   })
 })
 
-test.skip('Should reject duplicate username', async () => {
+test('Should reject duplicate username', async () => {
   await request(app).post('/users').send(userOne).expect(500)
 })
 
-test.skip('Should get deck', async () => {
+test('Should get deck', async () => {
   await request(app).get('/tarotDeck').send().expect(200)
 })
 
-test.skip('Should return 404 for nonpage', async () => {
+test('Should return 404 for nonpage', async () => {
   await request(app).get('/admin').send().expect(404)
 })
 
-test.skip('Should login existing user', async () => {
+test('Should login existing user', async () => {
   const response = await request(app)
     .post('/users/login')
     .send({
@@ -63,7 +69,7 @@ test.skip('Should login existing user', async () => {
   expect(user.tokens[1].token).toBe(response.body.token);
 })
 
-test.skip('Should not login nonexistent user', async () => {
+test('Should not login nonexistent user', async () => {
   await request(app)
     .post('/users/login')
     .send({
@@ -72,7 +78,17 @@ test.skip('Should not login nonexistent user', async () => {
     }).expect(400);
 })
 
-test.skip('Should update valid user fields', async () => {
+test('Should notify user of invalid username or password', async () => {
+  const response = await request(app)
+    .post('/users/login')
+    .send({
+      username: 'melbo',
+      password: 'P@ssword123'
+    });
+   expect(response.error).toBe('Unable to login');
+});
+
+test('Should update valid user fields', async () => {
   await request(app)
     .patch('/users/me')
     .set('Authorization', `Bearer ${userOne.tokens[0].token}`)
@@ -82,7 +98,7 @@ test.skip('Should update valid user fields', async () => {
   expect(user.email).toBe(userThree.email);
 })
 
-test.skip('Should reject invalid fields', async () => {
+test('Should reject invalid fields', async () => {
   request(app)
     .patch('/users/me')
     .set('Authorization', `Bearer ${userOne.tokens[0].token}`)
@@ -90,7 +106,7 @@ test.skip('Should reject invalid fields', async () => {
     .expect(400)
 })
 
-test.skip('Should delete account for authenticated user', async () => {
+test('Should delete account for authenticated user', async () => {
   await request(app)
     .delete('/users/me')
     .set('Authorization', `Bearer ${userOne.tokens[0].token}`)
@@ -101,7 +117,7 @@ test.skip('Should delete account for authenticated user', async () => {
   expect(user).toBeNull();
 })
 
-test.skip('Delete should reject unauthenticated user', async () => {
+test('Delete should reject unauthenticated user', async () => {
   await request(app)
     .delete('/users/me')
     .send({
@@ -110,4 +126,21 @@ test.skip('Delete should reject unauthenticated user', async () => {
     .expect(401)
   const user = await User.findOne({_id: userOneId})
   expect(user).not.toBeNull()
+}) 
+
+test('Should save new reading', async () =>{
+ try {
+   await request(app)
+     .put('/auth/reading')
+     .set('Authorization', `Bearer ${userOne.tokens[0].token}`)
+     .send(readingTwo)
+     .expect(201)
+     
+     // const user = await User.findOne({_id: userOneId});
+     // console.log(user);
+     // expect(user.history).toEqual(expect.arrayContaining([readingOne, readingTwo]))
+   } catch (err) {
+     return { error: err};
+   }
 })
+

@@ -124,7 +124,7 @@ router.post('/', async (req, res) => {
     if(err.reason === 'ValidationError'){
       return res.status(err.code).json(err);
     }
-    res.status(500).json({code: 500, message: err.errmsg});
+    return res.status(500).json({code: 500, message: err.errmsg});
   }
 });
 
@@ -133,6 +133,7 @@ router.post('/login', async (req, res) => {
   console.log(req.body)
   try{
     const user = await User.findByCredentials(req.body.username, req.body.password);
+    console.log(user)
     const { _id, username, email, history, tokens } = user;
     const editedUser = {
       _id,
@@ -142,9 +143,10 @@ router.post('/login', async (req, res) => {
       tokens
     }
     const token = await user.generateAuthToken();
-    res.send({ user: editedUser, token });
+    return res.send({ user: editedUser, token });
   } catch (err) {
-    res.status(400).send(err);
+    console.log(err)
+    return res.status(400).send(err);
   }
 });
 
