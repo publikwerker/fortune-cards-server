@@ -85,7 +85,7 @@ test('Should notify user of invalid username or password', async () => {
       username: 'melbo',
       password: 'P@ssword123'
     });
-   expect(response.error).toBe('Unable to login');
+   expect(response.text).toBe('Incorrect username or password');
 });
 
 test('Should update valid user fields', async () => {
@@ -129,18 +129,14 @@ test('Delete should reject unauthenticated user', async () => {
 }) 
 
 test('Should save new reading', async () =>{
- try {
-   await request(app)
-     .put('/auth/reading')
-     .set('Authorization', `Bearer ${userOne.tokens[0].token}`)
-     .send(readingTwo)
-     .expect(201)
-     
-     // const user = await User.findOne({_id: userOneId});
-     // console.log(user);
-     // expect(user.history).toEqual(expect.arrayContaining([readingOne, readingTwo]))
-   } catch (err) {
-     return { error: err};
-   }
+  await request(app)
+    .put('/auth/reading')
+    .set('Authorization', `Bearer ${userOne.tokens[0].token}`)
+    .send(readingTwo)
+    .expect(201)
+    
+    // const user = await User.findOne({_id: userOneId});
+    // console.log(user);
+    // expect(user.history).toEqual(expect.arrayContaining([readingOne, readingTwo]))
 })
 
