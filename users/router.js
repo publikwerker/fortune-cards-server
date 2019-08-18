@@ -145,7 +145,7 @@ router.post('/login', async (req, res) => {
     const token = await user.generateAuthToken();
     return res.send({ user: editedUser, token });
   } catch (err) {
-    return res.status(400).send('Incorrect username or password');
+    return res.status(401).send('Incorrect username or password');
   }
 });
 

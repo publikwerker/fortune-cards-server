@@ -75,7 +75,7 @@ test('Should not login nonexistent user', async () => {
     .send({
       username: 'melbo',
       password: 'P@ssword123'
-    }).expect(400);
+    }).expect(401);
 })
 
 test('Should notify user of invalid username or password', async () => {
