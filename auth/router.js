@@ -25,12 +25,19 @@ router.use(bodyParser.json());
 router.use(bodyParser.urlencoded({ extended: true }));
 
 //POST request to login
-router.post('/login', localAuth, (req, res) => {
-  console.log(req.body);
-  const authToken = createAuthToken(req.user.serialize());
-  console.log(`AuthToken is ${authToken}`);
-  return res.json({user: req.user.serialize(),
-    authToken})
+router.post('/login', localAuth, async (req, res) => {
+  try {
+    console.log(req.body);
+    const authToken = createAuthToken(req.user.serialize());
+    console.log(`AuthToken is ${authToken}`);
+      return res.json({user: req.user.serialize(), authToken})
+  }  catch (err) {
+    console.log(chalk.red(`Error: ${err.message}`));
+    if(err.reason === 'ValidationError'){
+      return res.status(err.code).json(err);
+    }
+    return res.status(500).json({code: 500, message: err.errmsg});
+  }
 });
 
 const jwtAuth = passport.authenticate('jwt', {session: false});
@@ -42,7 +49,7 @@ router.post('/refresh', jwtAuth, (req, res) => {
 });
 
 //GET history
-router.get('/', jwtAuth, (req, res) => {
+router.get('/', jwtAuth, async (req, res) => {
   const username = req.query.id;
   console.log(`Getting history for ${username}`);
   const requiredFields = [ 'username' ];
@@ -56,11 +63,16 @@ router.get('/', jwtAuth, (req, res) => {
       location: missingFields,
     });
   }
-  
-  return User.findOne({username: username})
-  .then(user => {
+  try {
+    const user = await User.findOne({username: username})
     return res.status(201).json(user.xtractHistory());
-  })
+  } catch (err) {
+    console.log(chalk.red(`Error: ${err.message}`));
+    if(err.reason === 'ValidationError'){
+      return res.status(err.code).json(err);
+    }
+    return res.status(500).json({code: 500, message: err.errmsg});
+  }
 });
 
 
