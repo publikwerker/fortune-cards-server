@@ -188,11 +188,40 @@ router.patch('/me', auth, async (req, res) => {
 router.delete('/me', auth, async (req, res) => {
   const user = req.user;
   try {
-    await User.deleteOne({_id: user._id});
+    await User.deleteOne( {_id: user._id});
     res.send();
   } catch (err) {
-    res.status(400).send(err)
+    res.status(400).send( err )
   }
+});
+
+// refresh user info
+router.get('/:userId', auth, async ( req, res ) => {
+  const user = req.user;
+  
+  try {
+    await User.findOne( { _id: req.params.userId } )
+      .select( '' )
+      .then( ( userData ) => {
+        res.json( userData );
+      })
+  } catch ( err ) {
+        console.log( err );
+        res.status( 500 ).json( err );
+    };
 })
+
+router.get('/all', auth, async  (req, res ) => {
+  try {
+    await User.find()
+      .select( '' )
+      .then( ( userData ) => {
+        res.json( userData );
+      })
+  } catch ( err ) {
+        console.log( err );
+        res.status( 500 ).json( err );
+    };
+});
 
 module.exports = {router};
