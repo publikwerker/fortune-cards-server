@@ -110,9 +110,11 @@ router.post('/', async (req, res) => {
 
   // if they passed validation, set values
   let { username, password } = req.body;
+  console.log("req.body: ",req.body);
   
   try {
     let hash = await User.hashPassword(password);
+    console.log("hash: ", hash);
     let user = await User.create({
       username,
       password: hash

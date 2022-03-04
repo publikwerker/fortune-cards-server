@@ -4,6 +4,7 @@ const mongoose = require('mongoose');
 const validator = require('validator');
 const jwt = require('jsonwebtoken');
 const JWT_SECRET = process.env.JWT_SECRET;
+const dateFormat = require('../utils/dateFormat');
 
 mongoose.Promise = global.Promise;
 
@@ -15,6 +16,7 @@ const ReadingSchema = mongoose.Schema({
   },
   query: {
     type: String,
+    maxlength: 255
   },
   cardsDealt:{
     type: Array,
@@ -22,12 +24,18 @@ const ReadingSchema = mongoose.Schema({
   },
   comments: {
     type: String,
+    maxlength: 1023
   }, 
   createdAt: {
-    type: String,
+    type: Date,
+    default: Date.now,
+    get: timestamp => dateFormat(timestamp)
   },
 }, {
-  timestamps: true
+  timestamps: true,
+  toJSON: {
+    getters: true
+  }
 });
 
 // Transform output during `res.json(data)`, `console.log(data)` etc.
@@ -46,6 +54,7 @@ const UserSchema = mongoose.Schema({
     unique: true,
     trim: true,
     minlength: 1,
+    maxlength: 31
   },
   password: {
     type: String,
@@ -54,7 +63,12 @@ const UserSchema = mongoose.Schema({
     minlength: 8,
     maxlength: 72
   },
-  history: [ReadingSchema],
+  history: [
+    {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: 'Reading',
+    },
+  ],
   email: {
     type: String,
     trim: true,
@@ -76,7 +90,14 @@ const UserSchema = mongoose.Schema({
     type: Buffer
   }
 }, {
-  timestamps: true
+  timestamps: true,
+  toJSON: {
+    virtuals: true,
+  }
+});
+
+UserSchema.virtual('readingCount').get(function() {
+  return this.history.length;
 });
 
 UserSchema.methods.generateAuthToken = async function () {
@@ -133,7 +154,7 @@ UserSchema.pre('save', async function (next) {
     user.password = await bcrypt.hash(user.password, 8);
   }
   next();
-})
+});
 
 const User = mongoose.model('User', UserSchema);
 const Reading = mongoose.model('Reading', ReadingSchema);
