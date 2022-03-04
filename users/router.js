@@ -120,6 +120,7 @@ router.post('/', async (req, res) => {
       password: hash
     });
     const token = await user.generateAuthToken();
+    console.log("token: ", token);
     return res.status(201).json({user: user.serialize(), token});
   } catch (err) {
     console.log(chalk.red(`Error: ${err.message}`));
@@ -152,6 +153,9 @@ router.post('/login', async (req, res) => {
 });
 
 //PATCH request to edit user
+// Auth Header must include bearer token, 
+// which will identify user
+// and allow any of the three fields to be edited
 router.patch('/me', auth, async (req, res) => {
   console.log(req.body)
   console.log(req.user);

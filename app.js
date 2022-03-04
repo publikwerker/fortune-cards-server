@@ -19,8 +19,8 @@ const app = express();
 app.use(morgan('common'));
 app.use(cors({origin:CLIENT_ORIGIN}));
 
-// passport.use(localStrategy);
-// passport.use(jwtStrategy);
+passport.use(localStrategy);
+passport.use(jwtStrategy);
 
 app.use('/users/', usersRouter);
 app.use('/auth/', authRouter);
