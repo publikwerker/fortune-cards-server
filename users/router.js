@@ -156,24 +156,25 @@ router.post('/login', async (req, res) => {
 // Auth Header must include bearer token, 
 // which will identify user
 // and allow any of the three fields to be edited
-router.patch('/me', auth, async (req, res) => {
-  console.log(req.body)
-  console.log(req.user);
-  const updates = Object.keys(req.body);
-  console.log(updates);
-  const allowedUpdates = ['username', 'email', 'password' ]; 
-  const isValidOperation = updates.every((update) => allowedUpdates.includes(update));
-  if (!isValidOperation){
+router.patch( '/me', auth, async ( req, res ) => {
+  console.log( req.body )
+  console.log( req.user );
+  const updates = Object.keys( req.body );
+  console.log( updates );
+  const allowedUpdates = [ 'username', 'email', 'password', 'history' ]; 
+  const isValidOperation = updates.every( ( update ) => allowedUpdates.includes( update ) );
+  if ( !isValidOperation ){
     return res.status(400).send('Error: Invalid Updates')
   }
   try { 
     console.log('trying')
     updates.forEach((update) => req.user[update] = req.body[update]);
     await req.user.save();
-    const { _id, username, email, history, tokens } = req.user;
+    const { _id, username, password, email, history, tokens } = req.user;
     const editedUser = {
       _id,
       username,
+      password,
       history,
       email,
       tokens
