@@ -9,6 +9,10 @@ const dateFormat = require('../utils/dateFormat');
 mongoose.Promise = global.Promise;
 
 const ReadingSchema = mongoose.Schema({
+  readingId: {
+    type: mongoose.Schema.Types.ObjectId,
+    default: () => new mongoose.Types.ObjectId(),
+  },
   userId: {
     type: mongoose.Schema.Types.ObjectId, 
     ref: 'User', 
@@ -22,7 +26,7 @@ const ReadingSchema = mongoose.Schema({
     type: Array,
     required: true,
   },
-  comments: {
+  notes: {
     type: String,
     maxlength: 1023
   }, 
@@ -33,14 +37,13 @@ const ReadingSchema = mongoose.Schema({
   },
 }, {
   timestamps: true,
-  toJSON: {
-    getters: true
-  }
+  id: false,
 });
 
 // Transform output during `res.json(data)`, `console.log(data)` etc.
 ReadingSchema.set('toJSON', {
   virtuals: true,
+  getters: true,
   transform: (doc, result) => {
     delete result._id;
     delete result.__v;
@@ -93,6 +96,7 @@ const UserSchema = mongoose.Schema({
   timestamps: true,
   toJSON: {
     virtuals: true,
+    getters: true,
   }
 });
 
