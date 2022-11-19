@@ -20,7 +20,7 @@
     "cors": "^2.8.5",
     "dotenv": "^6.2.0",
     "express": "^4.16.4",
-    "jest": "^24.8.0",
+    "jest": "^29.3.1",
     "jsonwebtoken": "^8.4.0",
     "mongoose": "^5.7.5",
     "morgan": "^1.9.1",
@@ -33,7 +33,7 @@
     "validator": "^13.7.0"
   },
   "devDependencies": {
-    "jest": "^24.8.0"
+    "jest": "^29.3.1"
   },
   "bugs": {
     "url": "https://github.com/thinkful-ei27/jason-capstone-server/issues"
